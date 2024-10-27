@@ -1,43 +1,29 @@
+#include "IOLatencyWriteBenchmark.h"
 #include <iostream>
-#include <fstream>
-#include <chrono>
-#include <vector>
+#include <string>
 
-#define BLOCK_SIZE 512   // Размер блока данных по варианту
-#define FILE_SIZE (1024 * 1024)  // Размер файла в байтах
+void print_usage(const char* program_name) {
+    std::cerr << "Usage: " << program_name << " <iterations>" << std::endl;
+}
 
 int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        std::cerr << "Usage: ./io_lat_write <iterations>" << std::endl;
+    if (argc != 2) {
+        print_usage(argv[0]);
         return 1;
     }
 
-    int iterations = std::stoi(argv[1]);
-    std::vector<char> buffer(BLOCK_SIZE, 'a');  // Буфер для записи данных
-
-    // Проведение итераций
-    for (int i = 0; i < iterations; ++i) {
-        // Открытие файла для записи
-        std::ofstream file("testfile.dat", std::ios::binary | std::ios::trunc);
-
-        if (!file) {
-            std::cerr << "Error opening file!" << std::endl;
-            return 1;
+    int iterations;
+    try {
+        iterations = std::stoi(argv[1]);
+        if (iterations <= 0) {
+            throw std::invalid_argument("Iterations must be positive.");
         }
-
-        // Измерение времени записи
-        auto start = std::chrono::high_resolution_clock::now();
-
-        // Запись данных в файл по блокам
-        for (size_t written = 0; written < FILE_SIZE; written += BLOCK_SIZE) {
-            file.write(buffer.data(), BLOCK_SIZE);
-            file.flush();  // Сброс буфера на диск
-        }
-
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> duration = end - start;
-        std::cout << "Iteration " << i + 1 << ": Write latency = " << duration.count() << " seconds" << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Invalid iterations value: " << argv[1] << std::endl;
+        return 1;
     }
+
+    IOLatencyWriteBenchmark::run(iterations);
 
     return 0;
 }

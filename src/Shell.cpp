@@ -30,7 +30,7 @@ void Shell::register_builtin_commands() {
 }
 
 void Shell::execute_command(const std::string& input) {
-    history.push_back(input);
+    history.push_back(input); // Добавляем команду в историю
 
     std::vector<std::string> args = split_input(input); // Разбиваем строку на токены
     if (args.empty()) return;
