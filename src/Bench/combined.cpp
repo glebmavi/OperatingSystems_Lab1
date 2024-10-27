@@ -6,12 +6,12 @@
 
 void print_usage(const char* program_name) {
     std::cerr << "Usage: " << program_name
-              << " --factorize-iterations <n> [--number <value>] [-v] "
-              << "--io-iterations <m>" << std::endl;
+              << " --factorize-iterations <n> [--number <value>] --io-iterations <m> [-v]" << std::endl;
     std::cerr << "  --factorize-iterations <n> : Number of factorization iterations (required)" << std::endl;
     std::cerr << "  --number <value>           : Number to factorize (optional, default=1234567890123456789)" << std::endl;
-    std::cerr << "  -v, --verbose             : Enable verbose output for factorization (optional)" << std::endl;
     std::cerr << "  --io-iterations <m>        : Number of IO latency write iterations (required)" << std::endl;
+    std::cerr << "  -v, --verbose              : Set verbose output" << std::endl;
+
 }
 
 int main(int argc, char* argv[]) {
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
     });
 
     std::thread io_thread([&]() {
-        IOLatencyWriteBenchmark::run(io_iterations);
+        IOLatencyWriteBenchmark::run(io_iterations, verbose);
     });
 
     factorize_thread.join();

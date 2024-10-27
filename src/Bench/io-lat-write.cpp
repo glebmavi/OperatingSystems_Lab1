@@ -3,11 +3,11 @@
 #include <string>
 
 void print_usage(const char* program_name) {
-    std::cerr << "Usage: " << program_name << " <iterations>" << std::endl;
+    std::cerr << "Usage: " << program_name << " <iterations> [-v]" << std::endl;
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 2) {
+    if (argc < 2 || argc > 3) {
         print_usage(argv[0]);
         return 1;
     }
@@ -23,7 +23,19 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    IOLatencyWriteBenchmark::run(iterations);
+    bool verbose = false;
+    if (argc == 3) {
+        std::string arg = argv[2];
+        if (arg == "-v") {
+            verbose = true;
+        } else {
+            std::cerr << "Unknown argument: " << arg << std::endl;
+            print_usage(argv[0]);
+            return 1;
+        }
+    }
+
+    IOLatencyWriteBenchmark::run(iterations, verbose);
 
     return 0;
 }

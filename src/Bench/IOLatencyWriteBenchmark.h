@@ -2,7 +2,7 @@
 #define IO_LATENCY_WRITE_BENCHMARK_H
 
 namespace IOLatencyWriteBenchmark {
-    void run(int iterations);
+    void run(int iterations, bool verbose);
 }
 
 #endif
