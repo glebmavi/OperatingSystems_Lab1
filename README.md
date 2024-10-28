@@ -52,14 +52,14 @@
 ![img_6.png](images/img_6.png)
 
 С оптимизацией
-![img.png](img.png)
+![img.png](images/1_img.png)
 
-![img_1.png](img_1.png)
+![img_1.png](images/2_img.png)
 
-![img_2.png](img_2.png)
+![img_2.png](images/3_img.png)
 
-![img_3.png](img_3.png)
+![img_3.png](images/4_img.png)
 
-![img_4.png](img_4.png)
+![img_4.png](images/5_img.png)
 
-![img_5.png](img_5.png)
+![img_5.png](images/6_img.png)
