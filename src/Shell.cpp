@@ -52,7 +52,7 @@ void Shell::execute_command(const std::string& input) {
         exec_args.push_back(nullptr);  // Null-terminate the argument list
 
         // Attempt to execute the external program
-        if (execv(cmd_name.c_str(), exec_args.data()) == -1) {
+        if (execvp(cmd_name.c_str(), exec_args.data()) == -1) {
             std::cerr << "Unknown command or failed to execute: " << cmd_name << std::endl;
         }
     }

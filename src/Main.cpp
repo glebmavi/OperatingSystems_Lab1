@@ -49,7 +49,13 @@ int main() {
 
     // Луп для ввода команд
     while (true) {
-        std::cout << "shell> ";
+
+        char cwd[1024];
+        if (getcwd(cwd, sizeof(cwd)) != nullptr) {
+            std::cout << "shell " << cwd << "> ";
+        } else {
+            std::cerr << "getcwd() error" << std::endl;
+        }
         std::getline(std::cin, command);
 
         // Выход из программы
