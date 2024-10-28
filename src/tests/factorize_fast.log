@@ -1,0 +1,31 @@
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+
+ Performance counter stats for '../../cmake-build-release-wsl/factorize 500000':
+
+          20451.76 msec task-clock:u              #    0.802 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+               129      page-faults:u             #    6.308 /sec                   
+   <not supported>      cycles:u                                                    
+   <not supported>      instructions:u                                              
+   <not supported>      branches:u                                                  
+   <not supported>      branch-misses:u                                             
+   <not supported>      L1-dcache-loads:u                                           
+   <not supported>      L1-dcache-load-misses:u                                     
+   <not supported>      LLC-loads:u                                                 
+   <not supported>      LLC-load-misses:u                                           
+   <not supported>      L1-icache-loads:u                                           
+   <not supported>      L1-icache-load-misses:u                                     
+   <not supported>      dTLB-loads:u                                                
+   <not supported>      dTLB-load-misses:u                                          
+   <not supported>      iTLB-loads:u                                                
+   <not supported>      iTLB-load-misses:u                                          
+   <not supported>      L1-dcache-prefetches:u                                      
+   <not supported>      L1-dcache-prefetch-misses:u                                   
+
+      25.493419091 seconds time elapsed
+
+       2.359904000 seconds user
+       7.969257000 seconds sys
+
+

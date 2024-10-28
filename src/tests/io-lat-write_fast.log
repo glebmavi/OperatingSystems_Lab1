@@ -1,0 +1,35 @@
+
+Overall Statistics:
+Average write latency: 0.000430171 seconds
+Minimum write latency: 0.000362546 seconds
+Maximum write latency: 0.00560909 seconds
+
+ Performance counter stats for '../../cmake-build-release-wsl/io-lat-write 10000':
+
+           5256.89 msec task-clock:u              #    0.461 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+               179      page-faults:u             #   34.051 /sec                   
+   <not supported>      cycles:u                                                    
+   <not supported>      instructions:u                                              
+   <not supported>      branches:u                                                  
+   <not supported>      branch-misses:u                                             
+   <not supported>      L1-dcache-loads:u                                           
+   <not supported>      L1-dcache-load-misses:u                                     
+   <not supported>      LLC-loads:u                                                 
+   <not supported>      LLC-load-misses:u                                           
+   <not supported>      L1-icache-loads:u                                           
+   <not supported>      L1-icache-load-misses:u                                     
+   <not supported>      dTLB-loads:u                                                
+   <not supported>      dTLB-load-misses:u                                          
+   <not supported>      iTLB-loads:u                                                
+   <not supported>      iTLB-load-misses:u                                          
+   <not supported>      L1-dcache-prefetches:u                                      
+   <not supported>      L1-dcache-prefetch-misses:u                                   
+
+      11.401829903 seconds time elapsed
+
+       0.478501000 seconds user
+       4.785013000 seconds sys
+
+

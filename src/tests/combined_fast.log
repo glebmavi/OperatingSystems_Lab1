@@ -1,0 +1,37 @@
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+
+Overall Statistics:
+Average write latency: 0.000450218 seconds
+Minimum write latency: 0.000379569 seconds
+Maximum write latency: 0.00446255 seconds
+Both benchmarks have completed successfully.
+
+ Performance counter stats for '../../cmake-build-release-wsl/combined --factorize-iterations 50000 --io-iterations 10000':
+
+           7852.76 msec task-clock:u              #    0.670 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+               194      page-faults:u             #   24.705 /sec                   
+   <not supported>      cycles:u                                                    
+   <not supported>      instructions:u                                              
+   <not supported>      branches:u                                                  
+   <not supported>      branch-misses:u                                             
+   <not supported>      L1-dcache-loads:u                                           
+   <not supported>      L1-dcache-load-misses:u                                     
+   <not supported>      LLC-loads:u                                                 
+   <not supported>      LLC-load-misses:u                                           
+   <not supported>      L1-icache-loads:u                                           
+   <not supported>      L1-icache-load-misses:u                                     
+   <not supported>      dTLB-loads:u                                                
+   <not supported>      dTLB-load-misses:u                                          
+   <not supported>      iTLB-loads:u                                                
+   <not supported>      iTLB-load-misses:u                                          
+   <not supported>      L1-dcache-prefetches:u                                      
+   <not supported>      L1-dcache-prefetch-misses:u                                   
+
+      11.720651670 seconds time elapsed
+
+       0.767106000 seconds user
+       6.017521000 seconds sys
+
+
