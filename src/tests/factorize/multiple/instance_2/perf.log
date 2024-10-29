@@ -1,0 +1,57 @@
+=== Starting ../../cmake-build-debug/factorize benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+
+ Performance counter stats for '../../cmake-build-debug/factorize 50000':
+
+          3,949.94 msec task-clock                       #    0.368 CPUs utilized             
+            65,281      context-switches                 #   16.527 K/sec                     
+             9,772      cpu-migrations                   #    2.474 K/sec                     
+               145      page-faults                      #   36.709 /sec                      
+     2,127,720,321      cpu_atom/cycles/                 #    0.539 GHz                         (35.09%)
+     5,376,057,826      cpu_core/cycles/                 #    1.361 GHz                         (71.07%)
+     1,649,468,662      cpu_atom/instructions/           #    0.78  insn per cycle              (39.75%)
+     5,605,828,957      cpu_core/instructions/           #    2.63  insn per cycle              (72.76%)
+       314,393,324      cpu_atom/branches/               #   79.594 M/sec                       (36.34%)
+     1,178,380,178      cpu_core/branches/               #  298.328 M/sec                       (74.94%)
+         5,594,603      cpu_atom/branch-misses/          #    1.78% of all branches             (36.87%)
+         8,904,257      cpu_core/branch-misses/          #    2.83% of all branches             (76.71%)
+             TopdownL1 (cpu_core)                 #     24.4 %  tma_backend_bound      
+                                                  #      4.4 %  tma_bad_speculation    
+                                                  #     38.0 %  tma_frontend_bound     
+                                                  #     33.2 %  tma_retiring             (77.91%)
+             TopdownL1 (cpu_atom)                 #     11.4 %  tma_bad_speculation    
+                                                  #     23.7 %  tma_retiring             (35.14%)
+                                                  #     36.4 %  tma_backend_bound      
+                                                  #     36.4 %  tma_backend_bound_aux  
+                                                  #     28.6 %  tma_frontend_bound       (29.47%)
+     1,480,851,322      L1-dcache-loads                  #  374.904 M/sec                       (30.01%)
+     2,741,387,994      L1-dcache-loads                  #  694.032 M/sec                       (75.30%)
+   <not supported>      L1-dcache-load-misses                                                 
+       101,012,914      L1-dcache-load-misses            #    6.82% of all L1-dcache accesses   (74.08%)
+       513,167,223      LLC-loads                        #  129.918 M/sec                       (31.05%)
+        31,506,517      LLC-loads                        #    7.976 M/sec                       (73.83%)
+       568,840,254      LLC-load-misses                  #  110.85% of all LL-cache accesses    (29.67%)
+           906,969      LLC-load-misses                  #    0.18% of all LL-cache accesses    (74.16%)
+     1,467,336,165      L1-icache-loads                  #  371.483 M/sec                       (28.32%)
+   <not supported>      L1-icache-loads                                                       
+       890,075,655      L1-icache-load-misses            #   60.66% of all L1-icache accesses   (28.64%)
+       183,332,128      L1-icache-load-misses            #   12.49% of all L1-icache accesses   (34.28%)
+       798,140,509      dTLB-loads                       #  202.064 M/sec                       (29.12%)
+     1,304,916,325      dTLB-loads                       #  330.363 M/sec                       (59.24%)
+       195,171,692      dTLB-load-misses                 #   24.45% of all dTLB cache accesses  (33.41%)
+         1,589,458      dTLB-load-misses                 #    0.20% of all dTLB cache accesses  (61.85%)
+   <not supported>      iTLB-loads                                                            
+   <not supported>      iTLB-loads                                                            
+       238,588,480      iTLB-load-misses                                                        (32.75%)
+         1,418,240      iTLB-load-misses                                                        (61.68%)
+   <not supported>      L1-dcache-prefetches                                                  
+   <not supported>      L1-dcache-prefetches                                                  
+   <not supported>      L1-dcache-prefetch-misses                                             
+   <not supported>      L1-dcache-prefetch-misses                                             
+
+      10.724752396 seconds time elapsed
+
+       0.578100000 seconds user
+       2.932557000 seconds sys
+
+

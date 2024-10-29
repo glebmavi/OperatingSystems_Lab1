@@ -38,4 +38,11 @@
 - [factorize](./src/Bench/factorize.cpp) - разложение числа на простые множители
 - [combined](./src/Bench/combined.cpp) - объединение io-lat-write и factorize в одну программу
 
+
 TODO
+
+ltrace
+strace
+top
+flamegraph
+perf

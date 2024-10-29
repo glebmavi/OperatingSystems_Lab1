@@ -1,0 +1,21 @@
+=== Starting ../../cmake-build-debug/factorize benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+ 60.96   20.582623         411     50000 _ZNSt6thread4joinEv
+ 29.67   10.019947         200     50000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  9.37    3.162480          63     50000 _Znwm
+  0.00    0.000247          49         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000176          35         5 __errno_location
+  0.00    0.000050          50         1 _ZNSolsEPFRSoS_E
+  0.00    0.000033          33         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000032          32         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000032          32         1 _ZNSolsEx
+  0.00    0.000031          31         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000031          31         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000031          31         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000030          30         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000030          30         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  0.00    0.000030          30         1 strlen
+------ ----------- ----------- --------- --------------------
+100.00   33.765803                150020 total

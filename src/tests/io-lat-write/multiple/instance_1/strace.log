@@ -1,0 +1,30 @@
+=== Starting ../../cmake-build-debug/io-lat-write benchmark ===
+
+Overall Statistics:
+Average write latency: 0.0159116 seconds
+Minimum write latency: 0.00552307 seconds
+Maximum write latency: 0.0886737 seconds
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 86.61    0.784216          12     64000           writev
+  6.94    0.062840         124       505           close
+  6.43    0.058196         115       505           openat
+  0.01    0.000083           3        22           mmap
+  0.00    0.000031           5         6           mprotect
+  0.00    0.000014           7         2           write
+  0.00    0.000012           2         6           fstat
+  0.00    0.000010          10         1           munmap
+  0.00    0.000006           2         3           brk
+  0.00    0.000005           1         4           read
+  0.00    0.000004           2         2           pread64
+  0.00    0.000003           3         1           futex
+  0.00    0.000002           2         1           set_tid_address
+  0.00    0.000002           2         1           set_robust_list
+  0.00    0.000002           2         1           prlimit64
+  0.00    0.000002           2         1           getrandom
+  0.00    0.000002           2         1           rseq
+  0.00    0.000001           1         1           arch_prctl
+  0.00    0.000000           0         1         1 access
+  0.00    0.000000           0         1           execve
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.905431          13     65065         1 total

@@ -1,0 +1,15 @@
+top - 18:12:20 up  3:34,  1 user,  load average: 9.01, 7.52, 5.27
+Tasks: 388 total,   3 running, 385 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.7 us,  6.7 sy,  0.0 ni, 88.3 id,  0.6 wa,  0.0 hi,  0.6 si,  0.0 st 
+MiB Mem :  31716.0 total,  12347.6 free,  10741.3 used,  10267.3 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  20974.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+4155732 root      20   0   80100   3584   3456 R  60.0   0.0   0:00.12 factori+
+ 505181 glebmavi  20   0   11.1g 805472 123864 S  30.0   2.5  21:37.05 Isolate+
+   3543 glebmavi  20   0 9659200   4.7g 731168 S  20.0  15.0  26:40.02 clion
+     66 root      20   0       0      0      0 S  10.0   0.0   0:06.55 ksoftir+
+   2695 glebmavi  20   0 4898924 319684 135952 S  10.0   1.0   5:31.46 gnome-s+
+ 504379 glebmavi  20   0   11.9g 557312 259396 S  10.0   1.7  16:46.50 firefox
+ 505233 glebmavi  20   0  671764 125612  98304 S  10.0   0.4   1:22.98 RDD Pro+
+1354082 root      20   0       0      0      0 I  10.0   0.0   0:02.37 kworker+

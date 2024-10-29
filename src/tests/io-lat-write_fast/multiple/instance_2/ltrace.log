@@ -1,0 +1,35 @@
+=== Starting ../../cmake-build-release/io-lat-write benchmark ===
+
+Overall Statistics:
+Average write latency: 0.151484 seconds
+Minimum write latency: 0.11027 seconds
+Maximum write latency: 0.295787 seconds
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+ 99.08   52.911483          51   1024000 _ZNSo5writeEPKcl
+  0.24    0.127433         127      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.17    0.090493         180       500 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.09    0.049191          49      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.09    0.048939          48      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.05    0.025476          50       501 _ZNSo5flushEv
+  0.05    0.024810          49       500 _ZNSt6localeD1Ev
+  0.05    0.024520          49       500 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.05    0.024398          48       500 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.05    0.024386          48       500 _ZNSt8ios_baseD2Ev
+  0.05    0.024368          48       500 _ZNSt12__basic_fileIcED1Ev
+  0.04    0.023828          47       500 _ZNSt8ios_baseC2Ev
+  0.00    0.000516          46        11 _ZdlPvm
+  0.00    0.000486          44        11 _Znwm
+  0.00    0.000433          48         9 memmove
+  0.00    0.000427          47         9 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000202          67         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000035          35         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000035          35         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  0.00    0.000033          33         1 strlen
+  0.00    0.000033          33         1 __isoc23_strtol
+  0.00    0.000032          32         1 memcpy
+  0.00    0.000032          32         1 _ZNSo3putEc
+  0.00    0.000032          32         1 __errno_location
+  0.00    0.000031          31         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+------ ----------- ----------- --------- --------------------
+100.00   53.401652               1031052 total

@@ -1,0 +1,32 @@
+=== Starting ../../cmake-build-debug/combined benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+
+Overall Statistics:
+Average write latency: 0.214033 seconds
+Minimum write latency: 0.134896 seconds
+Maximum write latency: 0.509761 seconds
+Both benchmarks have completed successfully.
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+100.00  109.742614    54871307         2 _ZNSt6thread4joinEv
+  0.00    0.000562         281         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  0.00    0.000395          39        10 strlen
+  0.00    0.000392          39        10 __errno_location
+  0.00    0.000327          40         8 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
+  0.00    0.000188          47         4 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000180          45         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000164          41         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000159          39         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000157          39         4 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000156          39         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000156          39         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000137          68         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv
+  0.00    0.000110          55         2 memcmp
+  0.00    0.000098          49         2 _Znwm
+  0.00    0.000092          46         2 _ZNSolsEPFRSoS_E
+  0.00    0.000079          39         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000039          39         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc
+  0.00    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
+------ ----------- ----------- --------- --------------------
+100.00  109.746083                    73 total

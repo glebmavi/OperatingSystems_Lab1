@@ -1,0 +1,15 @@
+top - 18:06:00 up  3:28,  1 user,  load average: 1.54, 1.74, 3.23
+Tasks: 389 total,   4 running, 385 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.2 us,  5.4 sy,  0.0 ni, 91.0 id,  2.4 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12249.8 free,  10841.2 used,  10239.3 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  20874.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1954789 root      20   0    6384   3456   3328 R  70.0   0.0   0:00.12 io-lat-+
+ 552813 root      20   0       0      0      0 R  20.0   0.0   0:03.03 kworker+
+   3543 glebmavi  20   0 9659192   4.7g 731168 S  10.0  15.0  26:20.19 clion
+ 505181 glebmavi  20   0   11.1g 785076 123340 R  10.0   2.4  20:32.94 Isolate+
+      1 root      20   0   23548  14440   9576 S   0.0   0.0   0:02.00 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_wo+
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+

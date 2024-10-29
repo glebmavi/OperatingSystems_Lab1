@@ -1,0 +1,26 @@
+=== Starting ../../cmake-build-release/combined benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+
+Overall Statistics:
+Average write latency: 0.106696 seconds
+Minimum write latency: 0.0685242 seconds
+Maximum write latency: 0.252156 seconds
+Both benchmarks have completed successfully.
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+100.00   53.723021    26861510         2 _ZNSt6thread4joinEv
+  0.00    0.000519         259         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  0.00    0.000108          36         3 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000083          20         4 memcpy
+  0.00    0.000083          20         4 strlen
+  0.00    0.000077          38         2 _Znwm
+  0.00    0.000070          35         2 _ZNSo5flushEv
+  0.00    0.000045          22         2 _ZNSo3putEc
+  0.00    0.000043          21         2 __isoc23_strtol
+  0.00    0.000041          20         2 __errno_location
+  0.00    0.000026          26         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000023          23         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000022          22         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  0.00    0.000021          21         1 _ZdlPvm
+------ ----------- ----------- --------- --------------------
+100.00   53.724182                    29 total
