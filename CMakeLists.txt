@@ -13,7 +13,7 @@ endif()
 
 # Настройка флагов компиляции для разных типов сборки
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -funroll-loops")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -funroll-loops -g")
 
 # Добавление исходных файлов для Shell и команд
 file(GLOB SHELL_SOURCES

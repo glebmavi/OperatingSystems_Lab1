@@ -1,3 +1,3 @@
-./run_benchmark_parallel.sh factorize_fast 10 ../../cmake-build-release-wsl/factorize 500000
-./run_benchmark_parallel.sh io-lat-write_fast 10 ../../cmake-build-release-wsl/io-lat-write 5000
-./run_benchmark_parallel.sh combined_fast 10 ../../cmake-build-release-wsl/combined --factorize-iterations 50000 --io-iterations 1000
+./run_benchmark_parallel.sh factorize_fast/multiple 10 ../../cmake-build-release/factorize 50000
+./run_benchmark_parallel.sh io-lat-write_fast/multiple 10 ../../cmake-build-release/io-lat-write 500
+./run_benchmark_parallel.sh combined_fast/multiple 10 ../../cmake-build-release/combined --factorize-iterations 10000 --io-iterations 100
