@@ -1,17 +1,19 @@
 #!/bin/bash
 
-# run_benchmark_parallel.sh
 # Script to run multiple instances of a benchmark in parallel
 
 if [ $# -lt 4 ]; then
-    echo "Usage: $0 <output_log_prefix> <num_instances> <benchmark_program> [additional arguments]"
+    echo "Usage: $0 <output_log_directory> <num_instances> <benchmark_program> [additional arguments]"
     exit 1
 fi
 
-OUTPUT_LOG_PREFIX=$1
+OUTPUT_DIR=$1
 NUM_INSTANCES=$2
 BENCHMARK_PROGRAM=$3
 shift 3
+
+# Create the output directory if it doesn't exist
+mkdir -p "$OUTPUT_DIR"
 
 # Check if benchmark program exists
 if [ ! -f "$BENCHMARK_PROGRAM" ]; then
@@ -24,31 +26,76 @@ if [ ! -x "$BENCHMARK_PROGRAM" ]; then
     exit 1
 fi
 
+# Change this to your username. Note that this is not equal to whoami because the script should be executed with sudo
+USER=glebmavi
+
 echo "Running $NUM_INSTANCES instances of $BENCHMARK_PROGRAM with arguments '$@'"
+echo "Collecting performance metrics with perf stat, ltrace, strace, and top"
+echo "Output will be saved in $OUTPUT_DIR directory"
 
-# Start mpstat to collect CPU usage in background
-MPSTAT_LOG="${OUTPUT_LOG_PREFIX}_mpstat.log"
-echo "Collecting CPU usage data with mpstat. Output will be saved to $MPSTAT_LOG"
-mpstat 1 > "$MPSTAT_LOG" &
-MPSTAT_PID=$!
+# Function to run a single benchmark instance with profiling and logging
+run_single_benchmark() {
+    local INSTANCE_ID=$1
+    shift 1
+    local INSTANCE_DIR="$OUTPUT_DIR/instance_$INSTANCE_ID"
 
-# Initialize an array to store benchmark PIDs
-declare -a BENCHMARK_PIDS=()
+    # Create instance-specific directory
+    mkdir -p "$INSTANCE_DIR"
 
+    echo "Starting benchmark instance $INSTANCE_ID..."
+    echo "Logs for instance $INSTANCE_ID will be saved in $INSTANCE_DIR"
 
-# Start instances of benchmark in background
+    # Run perf stat and save output to perf.log
+    echo "Instance $INSTANCE_ID: Running perf stat..."
+    perf stat -d -d -d "$BENCHMARK_PROGRAM" "$@" 2>&1 | tee "$INSTANCE_DIR/perf.log" &
+
+    PERF_PID=$!
+
+    # Run ltrace and save output to ltrace.log
+    echo "Instance $INSTANCE_ID: Running ltrace..."
+    ltrace -c "$BENCHMARK_PROGRAM" "$@" 2>&1 | tee "$INSTANCE_DIR/ltrace.log" &
+
+    LTRACE_PID=$!
+
+    # Run strace and save output to strace.log
+    echo "Instance $INSTANCE_ID: Running strace..."
+    strace -c "$BENCHMARK_PROGRAM" "$@" 2>&1 | tee "$INSTANCE_DIR/strace.log" &
+
+    STRACE_PID=$!
+
+    # Wait for perf, ltrace, and strace to finish
+    wait "$PERF_PID" "$LTRACE_PID" "$STRACE_PID"
+
+    echo "Instance $INSTANCE_ID: Benchmark and profiling completed."
+}
+
+# Export functions and variables for use in subshells
+export -f run_single_benchmark
+export BENCHMARK_PROGRAM
+export USER
+
+# Start top in the background to profile system performance
+echo "Starting top profiling..."
+top -b -n3 | head -n 35 > "$OUTPUT_DIR/top.log" & # Around 20 processes need to be shown
+TOP_PID=$!
+
+# Array to hold PIDs of benchmark instances
+BENCHMARK_PIDS=()
+
+# Start benchmark instances in parallel
 for i in $(seq 1 "$NUM_INSTANCES"); do
-    "$BENCHMARK_PROGRAM" "$@" &
-    PID=$!
-    BENCHMARK_PIDS+=("$PID")
+    run_single_benchmark "$i" "$@" &
+    BENCHMARK_PIDS+=($!)
 done
 
 # Wait for all benchmark instances to finish
-for PID in "${BENCHMARK_PIDS[@]}"; do
-    wait "$PID"
+echo "Waiting for all benchmark instances to complete..."
+for pid in "${BENCHMARK_PIDS[@]}"; do
+    wait "$pid"
 done
 
-# Kill mpstat process
-kill $MPSTAT_PID
+# Terminate the top profiling
+echo "Terminating top profiling..."
+kill "$TOP_PID"
 
-echo "All instances have completed."
+echo "All $NUM_INSTANCES benchmark instances have completed."

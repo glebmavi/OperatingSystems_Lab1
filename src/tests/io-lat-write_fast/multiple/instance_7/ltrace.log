@@ -1,0 +1,35 @@
+=== Starting ../../cmake-build-release/io-lat-write benchmark ===
+
+Overall Statistics:
+Average write latency: 0.151682 seconds
+Minimum write latency: 0.0929369 seconds
+Maximum write latency: 0.302466 seconds
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+ 99.07   52.919333          51   1024000 _ZNSo5writeEPKcl
+  0.24    0.129141         129      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.19    0.100078         200       500 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.09    0.049570          49      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.09    0.049470          49      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.05    0.024449          48       500 _ZNSt8ios_baseD2Ev
+  0.05    0.024447          48       500 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.05    0.024142          48       500 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.04    0.024008          48       500 _ZNSt6localeD1Ev
+  0.04    0.023852          47       501 _ZNSo5flushEv
+  0.04    0.023813          47       500 _ZNSt12__basic_fileIcED1Ev
+  0.04    0.023783          47       500 _ZNSt8ios_baseC2Ev
+  0.00    0.000518          47        11 _Znwm
+  0.00    0.000515          46        11 _ZdlPvm
+  0.00    0.000467          51         9 memmove
+  0.00    0.000322          35         9 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000098          98         1 _ZNSo3putEc
+  0.00    0.000090          30         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000077          77         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  0.00    0.000060          60         1 strlen
+  0.00    0.000054          54         1 __isoc23_strtol
+  0.00    0.000053          53         1 __errno_location
+  0.00    0.000052          52         1 memcpy
+  0.00    0.000052          52         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  0.00    0.000036          36         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+------ ----------- ----------- --------- --------------------
+100.00   53.418480               1031052 total

@@ -7,6 +7,9 @@ void print_usage(const char* program_name) {
 }
 
 int main(int argc, char* argv[]) {
+
+    std::cout << "=== Starting " << argv[0] <<" benchmark ===" << std::endl;
+
     if (argc < 2 || argc > 4) {
         print_usage(argv[0]);
         return 1;

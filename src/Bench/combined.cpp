@@ -20,6 +20,8 @@ int main(int argc, char* argv[]) {
     bool verbose = false;
     int io_iterations = 0;
 
+    std::cout << "=== Starting " << argv[0] <<" benchmark ===" << std::endl;
+
     // Parse arguments
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
