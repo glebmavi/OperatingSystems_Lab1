@@ -1,35 +1,35 @@
 === Starting ../../cmake-build-release/io-lat-write benchmark ===
 
 Overall Statistics:
-Average write latency: 0.151179 seconds
-Minimum write latency: 0.137359 seconds
-Maximum write latency: 0.299766 seconds
+Average write latency: 0.137856 seconds
+Minimum write latency: 0.116449 seconds
+Maximum write latency: 0.288286 seconds
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 99.05   52.759957          51   1024000 _ZNSo5writeEPKcl
-  0.25    0.132599         132      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
-  0.19    0.100893         201       500 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
-  0.09    0.049639          49      1000 _ZNSt6chrono3_V212system_clock3nowEv
-  0.09    0.048138          48      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
-  0.05    0.025041          50       500 _ZNSt8ios_baseD2Ev
-  0.05    0.024932          49       500 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
-  0.05    0.024124          48       500 _ZNSt6localeD1Ev
-  0.05    0.024096          48       501 _ZNSo5flushEv
-  0.05    0.024076          48       500 _ZNSt8ios_baseC2Ev
-  0.04    0.023786          47       500 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
-  0.04    0.023760          47       500 _ZNSt12__basic_fileIcED1Ev
-  0.00    0.000605          55        11 _ZdlPvm
-  0.00    0.000567          63         9 memmove
-  0.00    0.000552          50        11 _Znwm
-  0.00    0.000422          46         9 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000165          55         3 _ZNSo9_M_insertIdEERSoT_
-  0.00    0.000126         126         1 memcpy
-  0.00    0.000083          83         1 strlen
-  0.00    0.000056          56         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000052          52         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000052          52         1 __errno_location
-  0.00    0.000051          51         1 _ZNSo3putEc
-  0.00    0.000050          50         1 __isoc23_strtol
-  0.00    0.000049          49         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+ 99.10   48.398593          47   1024000 _ZNSo5writeEPKcl
+  0.22    0.106212         106      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.18    0.089370         178       500 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.09    0.045009          45      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.09    0.044043          44      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.05    0.022391          44       500 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.05    0.022033          44       500 _ZNSt12__basic_fileIcED1Ev
+  0.04    0.021830          43       500 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.04    0.021823          43       500 _ZNSt8ios_baseD2Ev
+  0.04    0.021804          43       500 _ZNSt8ios_baseC2Ev
+  0.04    0.021663          43       501 _ZNSo5flushEv
+  0.04    0.021401          42       500 _ZNSt6localeD1Ev
+  0.00    0.000518          47        11 _Znwm
+  0.00    0.000423          47         9 memmove
+  0.00    0.000420          38        11 _ZdlPvm
+  0.00    0.000324          36         9 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000142         142         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000097          32         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000048          48         1 memcpy
+  0.00    0.000048          48         1 __isoc23_strtol
+  0.00    0.000048          48         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  0.00    0.000047          47         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  0.00    0.000046          46         1 strlen
+  0.00    0.000046          46         1 __errno_location
+  0.00    0.000045          45         1 _ZNSo3putEc
 ------ ----------- ----------- --------- --------------------
-100.00   53.263871               1031052 total
+100.00   48.838424               1031052 total

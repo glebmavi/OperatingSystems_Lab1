@@ -2,14 +2,14 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.0168822 seconds
-Minimum write latency: 0.000774148 seconds
-Maximum write latency: 0.0710756 seconds
+Average write latency: 0.0138765 seconds
+Minimum write latency: 0.000640303 seconds
+Maximum write latency: 0.116955 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.325367      108455         3           futex
-  0.00    0.000004           2         2           write
+100.00    0.300501      100167         3           futex
+  0.00    0.000005           2         2           write
   0.00    0.000000           0         4           read
   0.00    0.000000           0         5           close
   0.00    0.000000           0         6           fstat
@@ -31,4 +31,4 @@ Both benchmarks have completed successfully.
   0.00    0.000000           0         1           rseq
   0.00    0.000000           0         2           clone3
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.325371        4118        79         1 total
+100.00    0.300506        3803        79         1 total

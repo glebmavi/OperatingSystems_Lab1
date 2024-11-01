@@ -2,19 +2,19 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 62.28   16.749528         167    100000 _ZNSt6thread4joinEv
- 28.93    7.781576          77    100000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  8.78    2.362014          23    100000 _Znwm
-  0.00    0.000207          51         4 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000076          76         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000040          40         1 _ZNSo5flushEv
-  0.00    0.000039          39         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000032          32         1 _ZNSo3putEc
-  0.00    0.000025          25         1 __isoc23_strtol
-  0.00    0.000025          25         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
-  0.00    0.000024          24         1 _ZNSo9_M_insertIxEERSoT_
-  0.00    0.000023          23         1 memcpy
-  0.00    0.000023          23         1 strlen
-  0.00    0.000022          22         1 __errno_location
+ 66.24   19.108476         191    100000 _ZNSt6thread4joinEv
+ 25.65    7.400230          74    100000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  8.11    2.338252          23    100000 _Znwm
+  0.00    0.000206          51         4 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000057          57         1 _ZNSo5flushEv
+  0.00    0.000047          47         1 memcpy
+  0.00    0.000046          46         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000042          42         1 __isoc23_strtol
+  0.00    0.000041          41         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  0.00    0.000040          40         1 _ZNSo9_M_insertIxEERSoT_
+  0.00    0.000039          39         1 _ZNSo3putEc
+  0.00    0.000039          39         1 strlen
+  0.00    0.000039          39         1 __errno_location
 ------ ----------- ----------- --------- --------------------
-100.00   26.893654                300014 total
+100.00   28.847595                300014 total

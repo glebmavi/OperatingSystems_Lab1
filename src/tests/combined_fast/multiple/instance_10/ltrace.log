@@ -2,25 +2,25 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.312939 seconds
-Minimum write latency: 0.104424 seconds
-Maximum write latency: 1.65586 seconds
+Average write latency: 0.286758 seconds
+Minimum write latency: 0.140885 seconds
+Maximum write latency: 1.50005 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 99.99   31.486896    15743448         2 _ZNSt6thread4joinEv
-  0.00    0.000680         340         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  0.00    0.000185          46         4 strlen
-  0.00    0.000169          84         2 _Znwm
-  0.00    0.000154          38         4 memcpy
-  0.00    0.000148          49         3 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000124          62         2 _ZNSo5flushEv
-  0.00    0.000093          46         2 __isoc23_strtol
-  0.00    0.000092          92         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000078          39         2 __errno_location
-  0.00    0.000069          34         2 _ZNSo3putEc
-  0.00    0.000056          56         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000049          49         1 _ZdlPvm
-  0.00    0.000042          42         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+ 99.99   28.845259    14422629         2 _ZNSt6thread4joinEv
+  0.00    0.001108         554         2 _Znwm
+  0.00    0.000418         209         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  0.00    0.000241          60         4 memcpy
+  0.00    0.000232          58         4 strlen
+  0.00    0.000218         109         2 __isoc23_strtol
+  0.00    0.000194          97         2 _ZNSo5flushEv
+  0.00    0.000149          49         3 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000123          61         2 __errno_location
+  0.00    0.000076          76         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000068          34         2 _ZNSo3putEc
+  0.00    0.000057          57         1 _ZdlPvm
+  0.00    0.000043          43         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000039          39         1 _ZNKSt5ctypeIcE13_M_widen_initEv
 ------ ----------- ----------- --------- --------------------
-100.00   31.488835                    29 total
+100.00   28.848225                    29 total

@@ -2,24 +2,23 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.0174792 seconds
-Minimum write latency: 0.000715842 seconds
-Maximum write latency: 0.0855003 seconds
+Average write latency: 0.0165191 seconds
+Minimum write latency: 0.000757794 seconds
+Maximum write latency: 0.115173 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 99.98    0.277761       92587         3           futex
-  0.01    0.000026          13         2           clone3
-  0.00    0.000010           2         5           rt_sigprocmask
-  0.00    0.000006           3         2           write
-  0.00    0.000003           0        24           mmap
-  0.00    0.000003           0         8           mprotect
+100.00    0.286668       95556         3           futex
+  0.00    0.000004           2         2           write
   0.00    0.000000           0         4           read
   0.00    0.000000           0         5           close
   0.00    0.000000           0         6           fstat
+  0.00    0.000000           0        24           mmap
+  0.00    0.000000           0         8           mprotect
   0.00    0.000000           0         1           munmap
   0.00    0.000000           0         3           brk
   0.00    0.000000           0         1           rt_sigaction
+  0.00    0.000000           0         5           rt_sigprocmask
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
@@ -30,5 +29,6 @@ Both benchmarks have completed successfully.
   0.00    0.000000           0         1           prlimit64
   0.00    0.000000           0         1           getrandom
   0.00    0.000000           0         1           rseq
+  0.00    0.000000           0         2           clone3
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.277809        3516        79         1 total
+100.00    0.286672        3628        79         1 total

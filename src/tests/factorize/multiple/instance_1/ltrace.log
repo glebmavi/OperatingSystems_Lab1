@@ -2,20 +2,20 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 60.91   20.709315         414     50000 _ZNSt6thread4joinEv
- 29.73   10.106470         202     50000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  9.35    3.180339          63     50000 _Znwm
-  0.00    0.000274          54         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000210          42         5 __errno_location
-  0.00    0.000095          95         1 _ZNSolsEPFRSoS_E
-  0.00    0.000052          52         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-  0.00    0.000050          50         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000047          47         1 _ZNSolsEx
-  0.00    0.000041          41         1 strlen
-  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000040          40         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000039          39         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+ 61.07   18.989866         379     50000 _ZNSt6thread4joinEv
+ 29.41    9.144575         182     50000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  9.52    2.961155          59     50000 _Znwm
+  0.00    0.000293          58         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000206          41         5 __errno_location
+  0.00    0.000079          79         1 _ZNSolsEPFRSoS_E
+  0.00    0.000076          76         1 strlen
+  0.00    0.000051          51         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000046          46         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000046          46         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000044          44         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000044          44         1 _ZNSolsEx
+  0.00    0.000044          44         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000041          41         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
 ------ ----------- ----------- --------- --------------------
-100.00   33.997093                150020 total
+100.00   31.096607                150020 total

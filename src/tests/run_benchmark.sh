@@ -48,7 +48,7 @@ strace -c "$BENCHMARK_PROGRAM" "$@" 2>&1 | tee "$OUTPUT_DIR/strace.log"
 echo "Running top..."
 "$BENCHMARK_PROGRAM" "$@" &  # Run in background
 PID=$!
-top -b -n3 | head -n 15 > "$OUTPUT_DIR/top.log" # Just so the first process is captured
+top -b -n3 > "$OUTPUT_DIR/top.log"
 wait $PID                     # Wait for the benchmark to complete
 
 # Define paths to FlameGraph scripts

@@ -1,33 +1,33 @@
 === Starting ../../cmake-build-debug/io-lat-write benchmark ===
 
 Overall Statistics:
-Average write latency: 0.285648 seconds
-Minimum write latency: 0.202564 seconds
-Maximum write latency: 0.430965 seconds
+Average write latency: 0.271257 seconds
+Minimum write latency: 0.163207 seconds
+Maximum write latency: 0.420223 seconds
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 51.71   50.837473          49   1024000 _ZNSo5writeEPKcl
- 47.98   47.172902          46   1024500 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
-  0.11    0.108934         217       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
-  0.10    0.095932         191       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
-  0.05    0.048446          48      1000 _ZNSt6chrono3_V212system_clock3nowEv
-  0.03    0.024818          49       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
-  0.02    0.022992          45       500 _ZNSo5flushEv
-  0.00    0.001389         126        11 _Znwm
-  0.00    0.000478          43        11 _ZdlPvm
-  0.00    0.000440          48         9 memmove
-  0.00    0.000353          35        10 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000208          41         5 __errno_location
-  0.00    0.000084          28         3 _ZNSolsEd
+ 51.78   48.468775          47   1024000 _ZNSo5writeEPKcl
+ 47.91   44.849906          43   1024500 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
+  0.11    0.098868         197       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
+  0.10    0.093210         186       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+  0.05    0.046326          46      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.02    0.022911          45       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+  0.02    0.022314          44       500 _ZNSo5flushEv
+  0.00    0.000486          44        11 _Znwm
+  0.00    0.000462          42        11 _ZdlPvm
+  0.00    0.000424          42        10 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000359          39         9 memmove
+  0.00    0.000204          40         5 __errno_location
+  0.00    0.000115          38         3 _ZNSolsEd
+  0.00    0.000109         109         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
   0.00    0.000074          74         1 _ZNSolsEPFRSoS_E
-  0.00    0.000049          49         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000048          48         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000047          47         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000045          45         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000045          45         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000045          45         1 strlen
-  0.00    0.000044          44         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000052          52         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  0.00    0.000046          46         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000044          44         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000042          42         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
   0.00    0.000042          42         1 memset
-  0.00    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000041          41         1 strlen
+  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
 ------ ----------- ----------- --------- --------------------
-100.00   98.314926               2051559 total
+100.00   93.604891               2051559 total

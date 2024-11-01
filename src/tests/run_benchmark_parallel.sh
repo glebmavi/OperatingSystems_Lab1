@@ -76,7 +76,7 @@ export USER
 
 # Start top in the background to profile system performance
 echo "Starting top profiling..."
-top -b -n3 | head -n 35 > "$OUTPUT_DIR/top.log" & # Around 20 processes need to be shown
+top -b -n3 > "$OUTPUT_DIR/top.log" &
 TOP_PID=$!
 
 # Array to hold PIDs of benchmark instances

@@ -1,30 +1,30 @@
 === Starting ../../cmake-build-debug/io-lat-write benchmark ===
 
 Overall Statistics:
-Average write latency: 0.0157712 seconds
-Minimum write latency: 0.00426921 seconds
-Maximum write latency: 0.0857127 seconds
+Average write latency: 0.0146369 seconds
+Minimum write latency: 0.00416521 seconds
+Maximum write latency: 0.0810422 seconds
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 86.91    0.804952          12     64000           writev
-  6.60    0.061094         120       505           close
-  6.50    0.060181         119       505           openat
-  0.00    0.000009           4         2           write
+ 87.34    0.753878          11     64000           writev
+  6.48    0.055958         110       505           close
+  6.16    0.053202         105       505           openat
+  0.00    0.000034           5         6           mprotect
+  0.00    0.000023           1        22           mmap
+  0.00    0.000017           8         2           write
+  0.00    0.000009           9         1           munmap
+  0.00    0.000008           2         3           brk
+  0.00    0.000003           0         6           fstat
+  0.00    0.000003           3         1           set_tid_address
+  0.00    0.000003           3         1           set_robust_list
+  0.00    0.000003           3         1           rseq
+  0.00    0.000002           2         1           arch_prctl
+  0.00    0.000002           2         1           futex
+  0.00    0.000002           2         1           prlimit64
+  0.00    0.000002           2         1           getrandom
   0.00    0.000000           0         4           read
-  0.00    0.000000           0         6           fstat
-  0.00    0.000000           0        22           mmap
-  0.00    0.000000           0         6           mprotect
-  0.00    0.000000           0         1           munmap
-  0.00    0.000000           0         3           brk
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
-  0.00    0.000000           0         1           arch_prctl
-  0.00    0.000000           0         1           futex
-  0.00    0.000000           0         1           set_tid_address
-  0.00    0.000000           0         1           set_robust_list
-  0.00    0.000000           0         1           prlimit64
-  0.00    0.000000           0         1           getrandom
-  0.00    0.000000           0         1           rseq
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.926236          14     65065         1 total
+100.00    0.863149          13     65065         1 total

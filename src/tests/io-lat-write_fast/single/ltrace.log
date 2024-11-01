@@ -1,35 +1,35 @@
 === Starting ../../cmake-build-release/io-lat-write benchmark ===
 
 Overall Statistics:
-Average write latency: 0.0668771 seconds
-Minimum write latency: 0.0544914 seconds
-Maximum write latency: 0.0966613 seconds
+Average write latency: 0.0572937 seconds
+Minimum write latency: 0.0531266 seconds
+Maximum write latency: 0.111927 seconds
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 98.56   46.962942          22   2048000 _ZNSo5writeEPKcl
-  0.47    0.223141         111      2000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
-  0.43    0.205940         205      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
-  0.10    0.049516          24      2000 _ZNSt6chrono3_V212system_clock3nowEv
-  0.09    0.044996          22      2000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
-  0.05    0.024192          24      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
-  0.05    0.022759          22      1000 _ZNSt8ios_baseD2Ev
-  0.05    0.022708          22      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
-  0.05    0.022497          22      1000 _ZNSt8ios_baseC2Ev
-  0.05    0.022336          22      1001 _ZNSo5flushEv
-  0.05    0.022223          22      1000 _ZNSt12__basic_fileIcED1Ev
-  0.05    0.022206          22      1000 _ZNSt6localeD1Ev
-  0.00    0.000466          51         9 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000283          23        12 _ZdlPvm
-  0.00    0.000250          20        12 _Znwm
-  0.00    0.000207          20        10 memmove
-  0.00    0.000153          51         3 _ZNSo9_M_insertIdEERSoT_
-  0.00    0.000047          47         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000046          46         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000024          24         1 _ZNSo3putEc
-  0.00    0.000024          24         1 strlen
-  0.00    0.000023          23         1 __isoc23_strtol
-  0.00    0.000022          22         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
-  0.00    0.000021          21         1 memcpy
-  0.00    0.000021          21         1 __errno_location
+ 98.30   40.098798          19   2048000 _ZNSo5writeEPKcl
+  0.74    0.302155         302      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.41    0.166919          83      2000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.11    0.043038          21      2000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.10    0.038892          19      2000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.05    0.021636          21      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.05    0.020076          20      1000 _ZNSt12__basic_fileIcED1Ev
+  0.05    0.019836          19      1000 _ZNSt6localeD1Ev
+  0.05    0.019756          19      1000 _ZNSt8ios_baseD2Ev
+  0.05    0.019633          19      1000 _ZNSt8ios_baseC2Ev
+  0.05    0.019411          19      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.05    0.019012          18      1001 _ZNSo5flushEv
+  0.00    0.000368          40         9 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000266          22        12 _Znwm
+  0.00    0.000230          19        12 _ZdlPvm
+  0.00    0.000195          19        10 memmove
+  0.00    0.000069          23         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000055          55         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000050          50         1 __errno_location
+  0.00    0.000043          43         1 __isoc23_strtol
+  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  0.00    0.000040          40         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  0.00    0.000040          40         1 memcpy
+  0.00    0.000040          40         1 _ZNSo3putEc
+  0.00    0.000038          38         1 strlen
 ------ ----------- ----------- --------- --------------------
-100.00   47.647043               2062055 total
+100.00   40.790637               2062055 total

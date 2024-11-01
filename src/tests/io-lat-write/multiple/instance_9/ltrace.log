@@ -1,33 +1,33 @@
 === Starting ../../cmake-build-debug/io-lat-write benchmark ===
 
 Overall Statistics:
-Average write latency: 0.284703 seconds
-Minimum write latency: 0.267397 seconds
-Maximum write latency: 0.440318 seconds
+Average write latency: 0.270212 seconds
+Minimum write latency: 0.250531 seconds
+Maximum write latency: 0.416638 seconds
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 51.76   50.825401          49   1024000 _ZNSo5writeEPKcl
- 47.87   47.006303          45   1024500 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
-  0.15    0.146889         293       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
-  0.13    0.125372         250       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
-  0.05    0.048205          48      1000 _ZNSt6chrono3_V212system_clock3nowEv
-  0.02    0.024160          48       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
-  0.02    0.023430          46       500 _ZNSo5flushEv
-  0.00    0.000548          49        11 _ZdlPvm
-  0.00    0.000515          46        11 _Znwm
-  0.00    0.000409          45         9 memmove
-  0.00    0.000360          36        10 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000147          49         3 _ZNSolsEd
-  0.00    0.000117          23         5 __errno_location
-  0.00    0.000065          65         1 _ZNSolsEPFRSoS_E
-  0.00    0.000035          35         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000025          25         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000025          25         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000025          25         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000025          25         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000024          24         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-  0.00    0.000024          24         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000024          24         1 strlen
-  0.00    0.000024          24         1 memset
+ 51.79   48.217830          47   1024000 _ZNSo5writeEPKcl
+ 47.92   44.613102          43   1024500 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
+  0.10    0.094699         189       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+  0.09    0.087823         175       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
+  0.05    0.045074          45      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.02    0.022420          44       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+  0.02    0.021831          43       500 _ZNSo5flushEv
+  0.00    0.000538          53        10 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000527          47        11 _Znwm
+  0.00    0.000399          36        11 _ZdlPvm
+  0.00    0.000373          41         9 memmove
+  0.00    0.000173          57         3 _ZNSolsEd
+  0.00    0.000138          27         5 __errno_location
+  0.00    0.000114         114         1 memset
+  0.00    0.000105         105         1 _ZNSolsEPFRSoS_E
+  0.00    0.000070          70         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  0.00    0.000047          47         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000043          43         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000041          41         1 strlen
+  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000020          20         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 ------ ----------- ----------- --------- --------------------
-100.00   98.202152               2051559 total
+100.00   93.105488               2051559 total
