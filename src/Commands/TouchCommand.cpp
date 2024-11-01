@@ -9,3 +9,7 @@ void TouchCommand::execute(const std::vector<std::string>& args) {
     }
     std::ofstream file(args[0]);
 }
+
+std::string TouchCommand::get_description() const {
+    return "create an empty file";
+}

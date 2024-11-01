@@ -21,3 +21,7 @@ void CatCommand::execute(const std::vector<std::string>& args) {
         std::cout << line << std::endl;
     }
 }
+
+std::string CatCommand::get_description() const {
+    return "display file content";
+}

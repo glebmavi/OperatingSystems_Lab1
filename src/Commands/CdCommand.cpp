@@ -11,3 +11,7 @@ void CdCommand::execute(const std::vector<std::string>& args) {
         perror("cd");
     }
 }
+
+std::string CdCommand::get_description() const {
+    return "change directory";
+}

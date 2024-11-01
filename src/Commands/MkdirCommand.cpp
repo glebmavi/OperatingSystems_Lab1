@@ -15,3 +15,7 @@ void MkdirCommand::execute(const std::vector<std::string>& args) {
         std::cerr << "mkdir: failed to create directory " << args[0] << std::endl;
     }
 }
+
+std::string MkdirCommand::get_description() const {
+    return "create a directory";
+}

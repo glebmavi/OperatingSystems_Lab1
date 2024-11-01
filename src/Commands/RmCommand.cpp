@@ -15,3 +15,7 @@ void RmCommand::execute(const std::vector<std::string>& args) {
         std::cerr << "rm: failed to remove " << args[0] << std::endl;
     }
 }
+
+std::string RmCommand::get_description() const {
+    return "remove a file";
+}

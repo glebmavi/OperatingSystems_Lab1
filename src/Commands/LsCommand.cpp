@@ -10,3 +10,7 @@ void LsCommand::execute(const std::vector<std::string>& args) {
     }
     std::cout << std::endl;
 }
+
+std::string LsCommand::get_description() const {
+    return "list files in the current directory";
+}

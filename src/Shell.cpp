@@ -81,3 +81,6 @@ std::vector<std::string> Shell::split_input(const std::string& input) {
     return tokens;
 }
 
+const std::map<std::string, Command*>& Shell::get_commands() const {
+    return commands;
+}

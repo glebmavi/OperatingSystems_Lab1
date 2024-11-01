@@ -38,11 +38,310 @@
 - [factorize](./src/Bench/factorize.cpp) - разложение числа на простые множители
 - [combined](./src/Bench/combined.cpp) - объединение io-lat-write и factorize в одну программу
 
+Профилирование запускается через .sh скрипты (в частности [test_all.sh](./src/tests/test_all.sh) для запуска всех тестов)
+Для профилирования используются следующие утилиты/команды:
+- **perf** - инструмент для производительного анализа производительности системы, позволяющий собирать различные метрики, включая использование процессора, кеша, переходы контекста и другие события. Используется для детального профилирования работы приложений и системы в целом.
+- **ltrace** - утилита для трассировки вызовов библиотечных функций (например, libc) в запущенной программе. Позволяет анализировать взаимодействие программы с библиотеками, отслеживать аргументы и возвращаемые значения функций.
+- **strace** - утилита для трассировки системных вызовов и сигналов, выполняемых процессом. Используется для анализа взаимодействия программы с ядром операционной системы, выявления ошибок и проблем с системными ресурсами.
+- **top** - интерактивная утилита для мониторинга процессов в реальном времени. Отображает информацию о загрузке процессора, использовании памяти, активности процессов и других системных метриках.
+- **flamegraph** - инструмент для визуализации профилей производительности в виде "огненных графиков". Позволяет быстро идентифицировать наиболее ресурсоемкие функции и участки кода в приложении, облегчая анализ узких мест в производительности.
 
-TODO
+### Результаты
 
-ltrace
-strace
-top
-flamegraph
-perf
+**Программа `factorize`**
+
+Единичный экземпляр, количество итерации 100000
+
+- perf
+
+```
+=== Starting ../../cmake-build-debug/factorize benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+
+ Performance counter stats for '../../cmake-build-debug/factorize 100000':
+
+          6,007.95 msec task-clock                       #    0.949 CPUs utilized             
+           105,393      context-switches                 #   17.542 K/sec                     
+             9,059      cpu-migrations                   #    1.508 K/sec                     
+               136      page-faults                      #   22.637 /sec                      
+     7,664,976,900      cpu_atom/cycles/                 #    1.276 GHz                         (43.64%)
+    10,111,444,708      cpu_core/cycles/                 #    1.683 GHz                         (34.02%)
+     7,050,028,778      cpu_atom/instructions/           #    0.92  insn per cycle              (45.09%)
+    14,426,772,133      cpu_core/instructions/           #    1.88  insn per cycle              (40.56%)
+     1,457,325,921      cpu_atom/branches/               #  242.566 M/sec                       (43.12%)
+     2,681,928,795      cpu_core/branches/               #  446.397 M/sec                       (46.65%)
+         7,283,257      cpu_atom/branch-misses/          #    0.50% of all branches             (41.05%)
+        12,832,865      cpu_core/branch-misses/          #    0.88% of all branches             (52.29%)
+             TopdownL1 (cpu_core)                 #     42.0 %  tma_backend_bound      
+                                                  #      4.0 %  tma_bad_speculation    
+                                                  #     27.8 %  tma_frontend_bound     
+                                                  #     26.2 %  tma_retiring             (59.14%)
+             TopdownL1 (cpu_atom)                 #      8.1 %  tma_bad_speculation    
+                                                  #     21.0 %  tma_retiring             (44.94%)
+                                                  #     56.1 %  tma_backend_bound      
+                                                  #     56.1 %  tma_backend_bound_aux  
+                                                  #     14.9 %  tma_frontend_bound       (43.49%)
+     9,158,712,434      L1-dcache-loads                  #    1.524 G/sec                       (34.41%)
+     4,281,379,940      L1-dcache-loads                  #  712.620 M/sec                       (64.22%)
+   <not supported>      L1-dcache-load-misses                                                 
+       190,384,496      L1-dcache-load-misses            #    2.08% of all L1-dcache accesses   (63.31%)
+     4,604,456,018      LLC-loads                        #  766.394 M/sec                       (31.82%)
+        39,406,763      LLC-loads                        #    6.559 M/sec                       (65.97%)
+     3,395,394,289      LLC-load-misses                  #   73.74% of all LL-cache accesses    (27.96%)
+         1,362,421      LLC-load-misses                  #    0.03% of all LL-cache accesses    (68.17%)
+     1,915,265,622      L1-icache-loads                  #  318.789 M/sec                       (40.08%)
+   <not supported>      L1-icache-loads                                                       
+       119,229,278      L1-icache-load-misses            #    6.23% of all L1-icache accesses   (41.67%)
+       284,390,243      L1-icache-load-misses            #   14.85% of all L1-icache accesses   (28.05%)
+     1,829,991,841      dTLB-loads                       #  304.595 M/sec                       (41.03%)
+     3,857,883,904      dTLB-loads                       #  642.130 M/sec                       (31.60%)
+           473,065      dTLB-load-misses                 #    0.03% of all dTLB cache accesses  (38.84%)
+         1,719,735      dTLB-load-misses                 #    0.09% of all dTLB cache accesses  (28.18%)
+   <not supported>      iTLB-loads                                                            
+   <not supported>      iTLB-loads                                                            
+        10,090,738      iTLB-load-misses                                                        (41.23%)
+         2,025,190      iTLB-load-misses                                                        (26.81%)
+   <not supported>      L1-dcache-prefetches                                                  
+   <not supported>      L1-dcache-prefetches                                                  
+   <not supported>      L1-dcache-prefetch-misses                                             
+   <not supported>      L1-dcache-prefetch-misses                                             
+
+       6.333690278 seconds time elapsed
+
+       0.948285000 seconds user
+       2.452159000 seconds sys
+
+```
+
+- ltrace
+
+```
+=== Starting ../../cmake-build-debug/factorize benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+ 64.59   19.427462         194    100000 _ZNSt6thread4joinEv
+ 27.11    8.153732          81    100000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
+  8.30    2.496119          24    100000 _Znwm
+  0.00    0.000269          53         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000191          38         5 __errno_location
+  0.00    0.000078          78         1 _ZNSolsEPFRSoS_E
+  0.00    0.000063          63         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000043          43         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000042          42         1 _ZNSolsEx
+  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000040          40         1 strlen
+  0.00    0.000039          39         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000039          39         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000038          38         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+------ ----------- ----------- --------- --------------------
+100.00   30.078234                300020 total
+```
+
+- strace
+
+```
+=== Starting ../../cmake-build-debug/factorize benchmark ===
+Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 57.75    0.468053           4    100000           clone3
+ 21.39    0.173362           1     97766     10712 futex
+ 20.80    0.168565           0    200001           rt_sigprocmask
+  0.02    0.000173           7        23           mmap
+  0.02    0.000156         156         1           execve
+  0.01    0.000044           6         7           mprotect
+  0.00    0.000029           5         5           openat
+  0.00    0.000022           3         6           fstat
+  0.00    0.000017           3         5           close
+  0.00    0.000012           3         4           read
+  0.00    0.000011          11         1           munmap
+  0.00    0.000011           3         3           brk
+  0.00    0.000006           3         2           pread64
+  0.00    0.000005           5         1           write
+  0.00    0.000004           4         1         1 access
+  0.00    0.000003           3         1           rt_sigaction
+  0.00    0.000003           3         1           getrandom
+  0.00    0.000002           2         1           arch_prctl
+  0.00    0.000002           2         1           set_tid_address
+  0.00    0.000002           2         1           set_robust_list
+  0.00    0.000002           2         1           prlimit64
+  0.00    0.000002           2         1           rseq
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.810486           2    397833     10713 total
+```
+
+- top
+
+```
+top - 18:03:19 up  3:25,  1 user,  load average: 1.41, 1.76, 3.53
+Tasks: 398 total,   4 running, 394 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  6.1 us,  3.6 sy,  0.0 ni, 89.1 id,  0.6 wa,  0.0 hi,  0.6 si,  0.0 st 
+MiB Mem :  31716.0 total,  12227.4 free,  10864.6 used,  10276.2 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  20851.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1754617 root      20   0   80116   3712   3584 R  30.0   0.0   0:00.05 factori+
+ 504379 glebmavi  20   0   12.0g 702852 273376 S  20.0   2.2  16:16.00 firefox
+ 505181 glebmavi  20   0   11.1g 814312 133956 S  20.0   2.5  19:59.40 Isolate+
+     72 root      20   0       0      0      0 S  10.0   0.0   0:04.77 ksoftir+
+   2395 glebmavi  20   0   25.1g 176344 119060 R  10.0   0.5  12:02.84 Xorg
+   3543 glebmavi  20   0 9659204   4.7g 731040 S  10.0  15.0  26:11.89 clion
+ 505005 glebmavi  20   0  348320  62500  51200 S  10.0   0.2   0:34.84 Utility+
+      1 root      20   0   23548  14440   9576 S   0.0   0.0   0:02.00 systemd
+```
+
+- flamegraph
+![flamegraph](src/tests/factorize/single/flamegraph.svg)
+
+Множество экземпляров 10, количество итерации 50000
+
+Пример одного экземпляра (4го)
+
+- perf
+
+- ltrace
+
+- strace
+
+`top` во время исполнения всех экземпляров
+
+
+**Программа `io-lat-write`**
+
+Единичный экземпляр, количество итерации 1000
+
+- perf
+
+- ltrace
+
+- strace
+
+- top
+
+- flamegraph
+
+
+Множество экземпляров 10, количество итерации 500
+
+Пример одного экземпляра (4го)
+
+- perf
+
+- ltrace
+
+- strace
+
+`top` во время исполнения всех экземпляров
+
+
+**Программа `combined`**
+
+Единичный экземпляр, количество итерации --factorize-iterations 20000 --io-iterations 500
+
+- perf
+
+- ltrace
+
+- strace
+
+- top
+
+- flamegraph
+
+
+Множество экземпляров 10, количество итерации --factorize-iterations 10000 --io-iterations 100
+
+Пример одного экземпляра (4го)
+
+- perf
+
+- ltrace
+
+- strace
+
+`top` во время исполнения всех экземпляров
+
+**Программа `factorize` с агрессивной оптимизацией**
+
+Единичный экземпляр, количество итерации 100000
+
+- perf
+
+- ltrace
+
+- strace
+
+- top
+
+- flamegraph
+
+Множество экземпляров 10, количество итерации 50000
+
+Пример одного экземпляра (4го)
+
+- perf
+
+- ltrace
+
+- strace
+
+`top` во время исполнения всех экземпляров
+
+
+**Программа `io-lat-write` с агрессивной оптимизацией**
+
+Единичный экземпляр, количество итерации 1000
+
+- perf
+
+- ltrace
+
+- strace
+
+- top
+
+- flamegraph
+
+
+Множество экземпляров 10, количество итерации 500
+
+Пример одного экземпляра (4го)
+
+- perf
+
+- ltrace
+
+- strace
+
+`top` во время исполнения всех экземпляров
+
+
+**Программа `combined` с агрессивной оптимизацией**
+
+Единичный экземпляр, количество итерации --factorize-iterations 20000 --io-iterations 500
+
+- perf
+
+- ltrace
+
+- strace
+
+- top
+
+- flamegraph
+
+
+Множество экземпляров 10, количество итерации --factorize-iterations 10000 --io-iterations 100
+
+Пример одного экземпляра (4го)
+
+- perf
+
+- ltrace
+
+- strace
+
+`top` во время исполнения всех экземпляров
+

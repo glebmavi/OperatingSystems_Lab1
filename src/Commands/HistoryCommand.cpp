@@ -9,3 +9,7 @@ void HistoryCommand::execute(const std::vector<std::string>& args) {
         std::cout << i + 1 << ": " << history[i] << std::endl;
     }
 }
+
+std::string HistoryCommand::get_description() const {
+    return "show command history";
+}
