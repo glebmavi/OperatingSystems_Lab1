@@ -23,6 +23,7 @@ public:
     void execute_command(const std::string& input);
     const std::vector<std::string>& get_history() const;
     const std::map<std::string, Command*>& get_commands() const;
+    void add_to_history(const std::string& input);
 };
 
 #endif

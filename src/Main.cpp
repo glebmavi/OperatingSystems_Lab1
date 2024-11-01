@@ -17,6 +17,8 @@ void execute_task(Shell& shell, const std::string& command) {
     // Для измерения времени выполнения
     auto start = std::chrono::high_resolution_clock::now();
 
+    shell.add_to_history(command);
+
     // Setup clone3 arguments
     struct clone_args cl_args = {0};
     cl_args.flags = CLONE_FS | CLONE_FILES, // Необходимо для работы с файлами
