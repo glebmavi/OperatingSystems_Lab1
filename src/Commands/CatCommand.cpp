@@ -14,6 +14,10 @@ void CatCommand::execute(const std::vector<std::string>& args) {
     }
     std::string line;
     while (std::getline(file, line)) {
+        // Remove trailing '\r' if present
+        if (!line.empty() && line.back() == '\r') {
+            line.pop_back();
+        }
         std::cout << line << std::endl;
     }
 }
