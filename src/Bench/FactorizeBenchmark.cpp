@@ -1,6 +1,5 @@
 #include "FactorizeBenchmark.h"
 #include <iostream>
-#include <thread>
 
 namespace FactorizeBenchmark {
 
@@ -21,7 +20,7 @@ namespace FactorizeBenchmark {
         bool first = true;
         for (int i = 0; i < iterations; ++i) {
             if (verbose || first) std::cout << "Factorizing " << number << ": ";
-            std::thread(factorize, number, verbose, first).join();
+            factorize(number, verbose, first);
             first = false;
         }
     }

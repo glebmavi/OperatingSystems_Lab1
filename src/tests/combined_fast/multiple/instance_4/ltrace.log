@@ -2,25 +2,37 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.286773 seconds
-Minimum write latency: 0.134362 seconds
-Maximum write latency: 1.50317 seconds
+Average write latency: 0.130692 seconds
+Minimum write latency: 0.112011 seconds
+Maximum write latency: 0.244762 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 99.99   28.845289    14422644         2 _ZNSt6thread4joinEv
-  0.01    0.002472        1236         2 _ZNSo5flushEv
-  0.00    0.000431         215         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  0.00    0.000179          59         3 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000152          38         4 strlen
-  0.00    0.000136          34         4 memcpy
-  0.00    0.000077          38         2 _Znwm
-  0.00    0.000073          36         2 __isoc23_strtol
-  0.00    0.000066          33         2 __errno_location
-  0.00    0.000064          64         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
-  0.00    0.000062          31         2 _ZNSo3putEc
-  0.00    0.000057          57         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000040          40         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000040          40         1 _ZdlPvm
+ 99.07    9.163418          44    204800 _ZNSo5writeEPKcl
+  0.21    0.019786         197       100 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.19    0.017806          89       200 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.09    0.008340          41       200 _ZNSt6chrono3_V212system_clock3nowEv
+  0.09    0.008316          41       200 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.05    0.004289          41       103 _ZNSo5flushEv
+  0.05    0.004200          42       100 _ZNSt8ios_baseD2Ev
+  0.05    0.004191          41       100 _ZNSt8ios_baseC2Ev
+  0.04    0.004136          41       100 _ZNSt6localeD1Ev
+  0.04    0.004128          41       100 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.04    0.004091          40       100 _ZNSt12__basic_fileIcED1Ev
+  0.04    0.003971          39       100 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.01    0.000686          38        18 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000380          38        10 _ZdlPvm
+  0.00    0.000376          41         9 _Znwm
+  0.00    0.000352          44         8 _ZNSo9_M_insertIxEERSoT_
+  0.00    0.000280          40         7 memmove
+  0.00    0.000180          45         4 strlen
+  0.00    0.000173          43         4 memcpy
+  0.00    0.000120          40         3 _ZNSo3putEc
+  0.00    0.000091          45         2 __isoc23_strtol
+  0.00    0.000088          29         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000086          43         2 __errno_location
+  0.00    0.000054          54         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000051          51         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000048          48         1 _ZNKSt5ctypeIcE13_M_widen_initEv
 ------ ----------- ----------- --------- --------------------
-100.00   28.849138                    29 total
+100.00    9.249637                206276 total

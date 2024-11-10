@@ -57,7 +57,7 @@ FLAMEGRAPH_COLLAPSE="/home/$USER/FlameGraph/stackcollapse-perf.pl"
 
 # Generate FlameGraph
 echo "Generating FlameGraph..."
-perf record -F 144 -g "$BENCHMARK_PROGRAM" "$@"
+perf record -F 2048 -g "$BENCHMARK_PROGRAM" "$@"
 perf script | "$FLAMEGRAPH_COLLAPSE" > "$OUTPUT_DIR/perf-folded.out"
 
 # Check if flamegraph.pl is available and generate SVG

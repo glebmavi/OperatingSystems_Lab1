@@ -2,20 +2,17 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 70.03   21.434723         214    100000 _ZNSt6thread4joinEv
- 22.74    6.959332          69    100000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  7.23    2.211784          22    100000 _Znwm
-  0.00    0.000137          27         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000112          22         5 __errno_location
-  0.00    0.000036          36         1 _ZNSolsEPFRSoS_E
-  0.00    0.000024          24         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000023          23         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000023          23         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000022          22         1 strlen
-  0.00    0.000022          22         1 _ZNSolsEx
-  0.00    0.000021          21         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000021          21         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000021          21         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000020          20         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+ 30.34    0.000473          43        11 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 20.21    0.000315          39         8 _ZNSolsEx
+ 12.19    0.000190          38         5 __errno_location
+ 10.07    0.000157          78         2 _ZNSolsEPFRSoS_E
+  8.15    0.000127         127         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  3.91    0.000061          61         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  2.63    0.000041          41         1 strlen
+  2.63    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  2.57    0.000040          40         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  2.44    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  2.44    0.000038          38         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  2.44    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
 ------ ----------- ----------- --------- --------------------
-100.00   30.606321                300020 total
+100.00    0.001559                    34 total

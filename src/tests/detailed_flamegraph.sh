@@ -12,7 +12,7 @@ BENCHMARK_PROGRAM=$2
 shift 2
 
 echo "Generating FlameGraph..."
-perf record -F 999 -g "$BENCHMARK_PROGRAM" "$@"
+perf record -F 4096 -g "$BENCHMARK_PROGRAM" "$@"
 perf script | "/home/glebmavi/FlameGraph/stackcollapse-perf.pl" > "$OUTPUT_DIR/perf-folded.out"
 /home/glebmavi/FlameGraph/flamegraph.pl "$OUTPUT_DIR/perf-folded.out" > "$OUTPUT_DIR/flamegraph_detailed.svg"
 

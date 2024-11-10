@@ -2,19 +2,16 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 60.12   17.813145         356     50000 _ZNSt6thread4joinEv
- 30.24    8.960599         179     50000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  9.64    2.855916          57     50000 _Znwm
-  0.00    0.000187          46         4 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000050          50         1 _ZNSo3putEc
-  0.00    0.000049          49         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000046          46         1 _ZNSo5flushEv
-  0.00    0.000044          44         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000032          32         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
-  0.00    0.000031          31         1 __isoc23_strtol
-  0.00    0.000031          31         1 _ZNSo9_M_insertIxEERSoT_
-  0.00    0.000030          30         1 strlen
-  0.00    0.000030          30         1 __errno_location
-  0.00    0.000028          28         1 memcpy
+ 38.53    0.000712         712         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+ 25.05    0.000463          46        10 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 16.67    0.000308          38         8 _ZNSo9_M_insertIxEERSoT_
+  5.25    0.000097          48         2 _ZNSo5flushEv
+  4.22    0.000078          39         2 _ZNSo3putEc
+  2.00    0.000037          37         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  1.79    0.000033          33         1 __isoc23_strtol
+  1.73    0.000032          32         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  1.62    0.000030          30         1 memcpy
+  1.57    0.000029          29         1 strlen
+  1.57    0.000029          29         1 __errno_location
 ------ ----------- ----------- --------- --------------------
-100.00   29.630218                150014 total
+100.00    0.001848                    29 total

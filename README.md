@@ -50,7 +50,7 @@
 
 **Программа `factorize`**
 
-Единичный экземпляр, количество итерации 100000
+Единичный экземпляр, количество итерации 1000000
 
 - [perf](src/tests/factorize/single/perf.log)
 
@@ -58,58 +58,58 @@
 === Starting ../../cmake-build-debug/factorize benchmark ===
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
- Performance counter stats for '../../cmake-build-debug/factorize 100000':
+ Performance counter stats for '../../cmake-build-debug/factorize 1000000':
 
-          5,456.71 msec task-clock                       #    0.936 CPUs utilized             
-           102,618      context-switches                 #   18.806 K/sec                     
-             3,860      cpu-migrations                   #  707.386 /sec                      
-               136      page-faults                      #   24.923 /sec                      
-     3,164,637,706      cpu_atom/cycles/                 #    0.580 GHz                         (18.77%)
-     9,951,354,601      cpu_core/cycles/                 #    1.824 GHz                         (34.74%)
-     1,372,515,139      cpu_atom/instructions/           #    0.43  insn per cycle              (33.88%)
-    15,165,791,590      cpu_core/instructions/           #    4.79  insn per cycle              (40.64%)
-       538,714,960      cpu_atom/branches/               #   98.725 M/sec                       (54.37%)
-     2,771,570,259      cpu_core/branches/               #  507.920 M/sec                       (48.07%)
-         2,082,101      cpu_atom/branch-misses/          #    0.39% of all branches             (49.98%)
-         9,385,925      cpu_core/branch-misses/          #    1.74% of all branches             (55.19%)
-             TopdownL1 (cpu_core)                 #     40.9 %  tma_backend_bound      
-                                                  #      3.4 %  tma_bad_speculation    
-                                                  #     26.4 %  tma_frontend_bound     
-                                                  #     29.2 %  tma_retiring             (61.52%)
-             TopdownL1 (cpu_atom)                 #    -34.2 %  tma_bad_speculation    
-                                                  #     15.1 %  tma_retiring             (63.94%)
-                                                  #    104.2 %  tma_backend_bound      
-                                                  #    104.2 %  tma_backend_bound_aux  
-                                                  #     15.0 %  tma_frontend_bound       (60.13%)
-     3,828,332,977      L1-dcache-loads                  #  701.583 M/sec                       (57.69%)
-     4,105,527,306      L1-dcache-loads                  #  752.382 M/sec                       (70.33%)
+          8,487.46 msec task-clock                       #    0.999 CPUs utilized             
+               222      context-switches                 #   26.156 /sec                      
+                26      cpu-migrations                   #    3.063 /sec                      
+               129      page-faults                      #   15.199 /sec                      
+    29,425,190,356      cpu_atom/cycles/                 #    3.467 GHz                         (0.08%)
+    38,479,933,210      cpu_core/cycles/                 #    4.534 GHz                         (35.64%)
+    22,109,621,224      cpu_atom/instructions/           #    0.75  insn per cycle              (0.10%)
+    42,089,779,793      cpu_core/instructions/           #    1.43  insn per cycle              (42.77%)
+     3,978,377,708      cpu_atom/branches/               #  468.736 M/sec                       (0.11%)
+     7,655,534,788      cpu_core/branches/               #  901.981 M/sec                       (49.90%)
+        18,865,180      cpu_atom/branch-misses/          #    0.47% of all branches             (0.11%)
+         4,238,768      cpu_core/branch-misses/          #    0.11% of all branches             (57.02%)
+             TopdownL1 (cpu_core)                 #     67.6 %  tma_backend_bound      
+                                                  #      0.8 %  tma_bad_speculation    
+                                                  #      8.2 %  tma_frontend_bound     
+                                                  #     23.4 %  tma_retiring             (64.14%)
+             TopdownL1 (cpu_atom)                 #     -2.3 %  tma_bad_speculation    
+                                                  #     20.0 %  tma_retiring             (0.11%)
+                                                  #     79.8 %  tma_backend_bound      
+                                                  #     79.8 %  tma_backend_bound_aux  
+                                                  #      2.4 %  tma_frontend_bound       (0.11%)
+    33,136,950,296      L1-dcache-loads                  #    3.904 G/sec                       (0.07%)
+    19,101,775,119      L1-dcache-loads                  #    2.251 G/sec                       (71.27%)
    <not supported>      L1-dcache-load-misses                                                 
-       185,697,152      L1-dcache-load-misses            #    4.85% of all L1-dcache accesses   (69.88%)
-        69,637,102      LLC-loads                        #   12.762 M/sec                       (55.13%)
-        36,055,289      LLC-loads                        #    6.608 M/sec                       (69.68%)
-                66      LLC-load-misses                  #    0.00% of all LL-cache accesses    (54.41%)
-           540,996      LLC-load-misses                  #    0.78% of all LL-cache accesses    (71.04%)
-     1,616,839,867      L1-icache-loads                  #  296.303 M/sec                       (51.20%)
+         1,168,802      L1-dcache-load-misses            #    0.00% of all L1-dcache accesses   (71.27%)
+       246,689,631      LLC-loads                        #   29.065 M/sec                       (0.07%)
+           577,401      LLC-loads                        #   68.030 K/sec                       (71.26%)
+                 0      LLC-load-misses                                                         (0.07%)
+             3,655      LLC-load-misses                  #    0.00% of all LL-cache accesses    (71.28%)
+     3,977,167,353      L1-icache-loads                  #  468.593 M/sec                       (0.07%)
    <not supported>      L1-icache-loads                                                       
-       142,301,275      L1-icache-load-misses            #    8.80% of all L1-icache accesses   (51.33%)
-       252,397,114      L1-icache-load-misses            #   15.61% of all L1-icache accesses   (27.72%)
-     2,244,781,729      dTLB-loads                       #  411.380 M/sec                       (38.57%)
-     3,979,308,951      dTLB-loads                       #  729.251 M/sec                       (29.06%)
-            65,895      dTLB-load-misses                 #    0.00% of all dTLB cache accesses  (45.08%)
-         1,023,292      dTLB-load-misses                 #    0.05% of all dTLB cache accesses  (28.88%)
+         3,418,461      L1-icache-load-misses            #    0.09% of all L1-icache accesses   (0.07%)
+         3,059,914      L1-icache-load-misses            #    0.08% of all L1-icache accesses   (28.52%)
+     9,507,921,612      dTLB-loads                       #    1.120 G/sec                       (0.07%)
+    19,120,315,716      dTLB-loads                       #    2.253 G/sec                       (28.52%)
+            61,583      dTLB-load-misses                 #    0.00% of all dTLB cache accesses  (0.07%)
+             6,617      dTLB-load-misses                 #    0.00% of all dTLB cache accesses  (28.53%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-         7,456,821      iTLB-load-misses                                                        (35.40%)
-         2,117,520      iTLB-load-misses                                                        (27.52%)
+           739,039      iTLB-load-misses                                                        (0.07%)
+            12,783      iTLB-load-misses                                                        (28.50%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       5.828515355 seconds time elapsed
+       8.493866000 seconds time elapsed
 
-       0.914976000 seconds user
-       1.952062000 seconds sys
+       8.478717000 seconds user
+       0.010000000 seconds sys
 ```
 
 - [ltrace](src/tests/factorize/single/ltrace.log)
@@ -119,23 +119,20 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 70.03   21.434723         214    100000 _ZNSt6thread4joinEv
- 22.74    6.959332          69    100000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  7.23    2.211784          22    100000 _Znwm
-  0.00    0.000137          27         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000112          22         5 __errno_location
-  0.00    0.000036          36         1 _ZNSolsEPFRSoS_E
-  0.00    0.000024          24         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000023          23         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000023          23         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000022          22         1 strlen
-  0.00    0.000022          22         1 _ZNSolsEx
-  0.00    0.000021          21         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000021          21         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000021          21         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000020          20         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+ 30.34    0.000473          43        11 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 20.21    0.000315          39         8 _ZNSolsEx
+ 12.19    0.000190          38         5 __errno_location
+ 10.07    0.000157          78         2 _ZNSolsEPFRSoS_E
+  8.15    0.000127         127         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  3.91    0.000061          61         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  2.63    0.000041          41         1 strlen
+  2.63    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  2.57    0.000040          40         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  2.44    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  2.44    0.000038          38         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  2.44    0.000038          38         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
 ------ ----------- ----------- --------- --------------------
-100.00   30.606321                300020 total
+100.00    0.001559                    34 total
 ```
 
 - [strace](src/tests/factorize/single/strace.log)
@@ -145,54 +142,50 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 55.44    0.372145           3    100000           clone3
- 23.33    0.156597           1     99479      5361 futex
- 21.17    0.142097           0    200001           rt_sigprocmask
-  0.02    0.000163           7        23           mmap
-  0.02    0.000138         138         1           execve
-  0.01    0.000042           6         7           mprotect
-  0.00    0.000029           5         5           openat
-  0.00    0.000019           3         6           fstat
-  0.00    0.000012           3         4           read
-  0.00    0.000012           2         5           close
-  0.00    0.000011          11         1           munmap
-  0.00    0.000010           3         3           brk
-  0.00    0.000005           2         2           pread64
-  0.00    0.000004           4         1           write
-  0.00    0.000004           4         1         1 access
-  0.00    0.000003           3         1           prlimit64
-  0.00    0.000003           3         1           getrandom
-  0.00    0.000002           2         1           rt_sigaction
-  0.00    0.000002           2         1           arch_prctl
-  0.00    0.000002           2         1           set_tid_address
-  0.00    0.000002           2         1           set_robust_list
-  0.00    0.000002           2         1           rseq
+ 30.91    0.000034           5         6           mprotect
+ 25.45    0.000028           1        22           mmap
+  9.09    0.000010          10         1           munmap
+  7.27    0.000008           4         2           write
+  7.27    0.000008           2         3           brk
+  2.73    0.000003           0         6           fstat
+  2.73    0.000003           3         1           futex
+  2.73    0.000003           3         1           prlimit64
+  2.73    0.000003           3         1           getrandom
+  1.82    0.000002           0         5           close
+  1.82    0.000002           2         1           arch_prctl
+  1.82    0.000002           2         1           set_tid_address
+  1.82    0.000002           2         1           set_robust_list
+  1.82    0.000002           2         1           rseq
+  0.00    0.000000           0         4           read
+  0.00    0.000000           0         2           pread64
+  0.00    0.000000           0         1         1 access
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         5           openat
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.671304           1    399546      5362 total
+100.00    0.000110           1        65         1 total
 ```
 
 - [top](src/tests/factorize/single/top.log)
 
 ```
-top - 22:29:46 up  1:24,  1 user,  load average: 3.38, 5.31, 3.03
-Tasks: 383 total,   1 running, 382 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  4.3 us,  2.7 sy,  0.0 ni, 92.8 id,  0.1 wa,  0.0 hi,  0.1 si,  0.0 st 
-MiB Mem :  31715.9 total,  14749.6 free,  10189.2 used,   8551.1 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21526.7 avail Mem 
+top - 21:39:15 up  2:06,  1 user,  load average: 1.20, 1.09, 1.54
+Tasks: 418 total,   3 running, 415 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  6.7 us,  0.0 sy,  0.0 ni, 93.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12555.6 free,   9435.3 used,  11620.3 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22280.7 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-2120522 root      20   0   80116   3712   3584 S  27.2   0.0   0:00.87 factori+
-  11497 glebmavi  20   0 9664928   3.1g 737704 S   4.0  10.0   9:17.75 clion
-   6164 glebmavi  20   0 2721912 244808 117504 S   1.7   0.8   4:50.24 Isolate+
-    129 root      20   0       0      0      0 I   1.0   0.0   0:09.11 kworker+
-    162 root      20   0       0      0      0 I   1.0   0.0   0:00.61 kworker+
+  45075 root      20   0    6376   3328   3200 R 100.0   0.0   0:00.20 factori+
+  40294 glebmavi  20   0 9538720   3.1g 711172 S  10.0  10.1   7:42.70 clion
+  40384 glebmavi  20   0  266.6g 935300 315132 S  10.0   2.9   0:36.36 Rider.B+
+      1 root      20   0   23780  14312   9064 S   0.0   0.0   0:04.98 systemd
 ```
 
 - flamegraph
 
 ![flamegraph](src/tests/factorize/single/flamegraph.svg)
 
-Множество экземпляров 10, количество итерации 50000
+Множество экземпляров 10, количество итерации 1000000
 
 Пример одного экземпляра (4го)
 
@@ -201,58 +194,53 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21526.7 avail Mem
 === Starting ../../cmake-build-debug/factorize benchmark ===
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
- Performance counter stats for '../../cmake-build-debug/factorize 50000':
+ Performance counter stats for '../../cmake-build-debug/factorize 1000000':
 
-          3,888.12 msec task-clock                       #    0.412 CPUs utilized             
-            57,912      context-switches                 #   14.895 K/sec                     
-            16,536      cpu-migrations                   #    4.253 K/sec                     
-               136      page-faults                      #   34.978 /sec                      
-     1,714,291,323      cpu_atom/cycles/                 #    0.441 GHz                         (39.55%)
-     5,059,843,580      cpu_core/cycles/                 #    1.301 GHz                         (69.10%)
-     1,440,634,893      cpu_atom/instructions/           #    0.84  insn per cycle              (46.34%)
-     5,262,694,065      cpu_core/instructions/           #    3.07  insn per cycle              (71.76%)
-       322,485,720      cpu_atom/branches/               #   82.941 M/sec                       (38.76%)
-     1,096,332,266      cpu_core/branches/               #  281.970 M/sec                       (74.42%)
-         5,160,668      cpu_atom/branch-misses/          #    1.60% of all branches             (36.28%)
-         7,874,655      cpu_core/branch-misses/          #    2.44% of all branches             (75.98%)
-             TopdownL1 (cpu_core)                 #     23.8 %  tma_backend_bound      
-                                                  #      4.4 %  tma_bad_speculation    
-                                                  #     38.0 %  tma_frontend_bound     
-                                                  #     33.9 %  tma_retiring             (77.53%)
-             TopdownL1 (cpu_atom)                 #      7.5 %  tma_bad_speculation    
-                                                  #     23.7 %  tma_retiring             (35.91%)
-                                                  #     37.8 %  tma_backend_bound      
-                                                  #     37.8 %  tma_backend_bound_aux  
-                                                  #     31.1 %  tma_frontend_bound       (34.59%)
-       981,354,395      L1-dcache-loads                  #  252.398 M/sec                       (28.69%)
-     2,640,461,960      L1-dcache-loads                  #  679.110 M/sec                       (75.00%)
+         18,908.14 msec task-clock                       #    0.586 CPUs utilized             
+             4,122      context-switches                 #  218.001 /sec                      
+                57      cpu-migrations                   #    3.015 /sec                      
+               128      page-faults                      #    6.770 /sec                      
+     <not counted>      cpu_atom/cycles/                                                        (0.00%)
+    76,230,363,677      cpu_core/cycles/                 #    4.032 GHz                         (35.73%)
+     <not counted>      cpu_atom/instructions/                                                  (0.00%)
+    42,033,523,407      cpu_core/instructions/                                                  (42.86%)
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+     7,647,641,966      cpu_core/branches/               #  404.463 M/sec                       (50.02%)
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+         4,911,346      cpu_core/branch-misses/                                                 (57.16%)
+             TopdownL1 (cpu_core)                 #     58.8 %  tma_backend_bound      
+                                                  #      1.8 %  tma_bad_speculation    
+                                                  #     15.1 %  tma_frontend_bound     
+                                                  #     24.2 %  tma_retiring             (64.31%)
+     <not counted>      L1-dcache-loads                                                         (0.00%)
+    19,088,672,710      L1-dcache-loads                  #    1.010 G/sec                       (71.45%)
    <not supported>      L1-dcache-load-misses                                                 
-        96,149,704      L1-dcache-load-misses            #    9.80% of all L1-dcache accesses   (76.43%)
-       256,750,514      LLC-loads                        #   66.035 M/sec                       (37.78%)
-        31,409,039      LLC-loads                        #    8.078 M/sec                       (75.89%)
-       487,549,430      LLC-load-misses                  #  189.89% of all LL-cache accesses    (38.91%)
-           733,914      LLC-load-misses                  #    0.29% of all LL-cache accesses    (74.96%)
-       916,242,187      L1-icache-loads                  #  235.652 M/sec                       (39.04%)
+         2,135,877      L1-dcache-load-misses                                                   (71.45%)
+     <not counted>      LLC-loads                                                               (0.00%)
+           276,434      LLC-loads                        #   14.620 K/sec                       (71.42%)
+     <not counted>      LLC-load-misses                                                         (0.00%)
+             4,167      LLC-load-misses                                                         (71.43%)
+     <not counted>      L1-icache-loads                                                         (0.00%)
    <not supported>      L1-icache-loads                                                       
-       546,681,463      L1-icache-load-misses            #   59.67% of all L1-icache accesses   (37.54%)
-       184,273,693      L1-icache-load-misses            #   20.11% of all L1-icache accesses   (35.25%)
-       909,588,383      dTLB-loads                       #  233.940 M/sec                       (36.75%)
-     1,428,747,021      dTLB-loads                       #  367.465 M/sec                       (55.72%)
-       243,965,104      dTLB-load-misses                 #   26.82% of all dTLB cache accesses  (40.27%)
-         1,365,799      dTLB-load-misses                 #    0.15% of all dTLB cache accesses  (55.10%)
+     <not counted>      L1-icache-load-misses                                                   (0.00%)
+         3,869,362      L1-icache-load-misses                                                   (28.55%)
+     <not counted>      dTLB-loads                                                              (0.00%)
+    19,127,903,030      dTLB-loads                       #    1.012 G/sec                       (28.55%)
+     <not counted>      dTLB-load-misses                                                        (0.00%)
+            16,639      dTLB-load-misses                                                        (28.58%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-       207,575,240      iTLB-load-misses                                                        (41.99%)
-         1,724,119      iTLB-load-misses                                                        (56.31%)
+     <not counted>      iTLB-load-misses                                                        (0.00%)
+           106,139      iTLB-load-misses                                                        (28.57%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       9.427480686 seconds time elapsed
+      32.273226278 seconds time elapsed
 
-       0.567952000 seconds user
-       2.866970000 seconds sys
+      18.891007000 seconds user
+       0.019984000 seconds sys
 ```
 
 - [ltrace](src/tests/factorize/multiple/instance_4/ltrace.log)
@@ -261,23 +249,20 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 61.05   18.946574         378     50000 _ZNSt6thread4joinEv
- 29.46    9.141307         182     50000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  9.49    2.944600          58     50000 _Znwm
-  0.00    0.000507         101         5 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000210          42         5 __errno_location
-  0.00    0.000168         168         1 _ZNSolsEPFRSoS_E
-  0.00    0.000110         110         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000097          97         1 strlen
-  0.00    0.000074          74         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000066          66         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000063          63         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000063          63         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000054          54         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-  0.00    0.000039          39         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000039          39         1 _ZNSolsEx
+ 32.36    0.000519          47        11 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 21.20    0.000340          42         8 _ZNSolsEx
+ 12.78    0.000205          41         5 __errno_location
+ 11.53    0.000185          92         2 _ZNSolsEPFRSoS_E
+  3.30    0.000053          53         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  2.93    0.000047          47         1 strlen
+  2.74    0.000044          44         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  2.68    0.000043          43         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  2.68    0.000043          43         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  2.62    0.000042          42         1 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  2.62    0.000042          42         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  2.56    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 ------ ----------- ----------- --------- --------------------
-100.00   31.033971                150020 total
+100.00    0.001604                    34 total
 ```
 
 - [strace](src/tests/factorize/multiple/instance_4/strace.log)
@@ -286,91 +271,68 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 69.57    0.648895          12     50000           clone3
- 26.71    0.249133           2    100001           rt_sigprocmask
-  3.68    0.034295           6      4909      2107 futex
-  0.02    0.000171           7        23           mmap
-  0.00    0.000045           6         7           mprotect
-  0.00    0.000027           5         5           openat
-  0.00    0.000022           3         6           fstat
-  0.00    0.000012           3         4           read
-  0.00    0.000012          12         1           munmap
-  0.00    0.000010           2         5           close
-  0.00    0.000010           3         3           brk
-  0.00    0.000009           9         1           write
-  0.00    0.000004           2         2           pread64
-  0.00    0.000003           3         1           rt_sigaction
-  0.00    0.000003           3         1         1 access
-  0.00    0.000003           3         1           set_tid_address
-  0.00    0.000003           3         1           set_robust_list
-  0.00    0.000003           3         1           getrandom
-  0.00    0.000002           2         1           arch_prctl
-  0.00    0.000002           2         1           prlimit64
-  0.00    0.000002           2         1           rseq
+  0.00    0.000000           0         4           read
+  0.00    0.000000           0         2           write
+  0.00    0.000000           0         5           close
+  0.00    0.000000           0         6           fstat
+  0.00    0.000000           0        22           mmap
+  0.00    0.000000           0         6           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         2           pread64
+  0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           futex
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         5           openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+  0.00    0.000000           0         1           getrandom
+  0.00    0.000000           0         1           rseq
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.932666           6    154976      2108 total
+100.00    0.000000           0        65         1 total
 ```
 
 - [`top` во время исполнения всех экземпляров](src/tests/factorize/multiple/top.log)
 ```
-top - 22:34:43 up  1:29,  1 user,  load average: 7.24, 3.95, 2.91
-Tasks: 480 total,  27 running, 438 sleeping,  15 stopped,   0 zombie
-%Cpu(s): 19.5 us, 78.5 sy,  0.0 ni,  1.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :  31715.9 total,  11040.4 free,  10354.0 used,  12072.5 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21361.9 avail Mem 
+top - 21:40:00 up  2:07,  1 user,  load average: 3.49, 1.57, 1.67
+Tasks: 520 total,  33 running, 487 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 99.4 us,  0.6 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12475.9 free,   9514.5 used,  11625.7 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22201.5 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-2420845 root      20   0    5112   2724   2340 R  37.5   0.0   0:02.24 ltrace
-2420862 root      20   0    5112   2872   2488 R  37.5   0.0   0:02.21 ltrace
-2420819 root      20   0    5112   3136   2624 S  37.2   0.0   0:02.31 ltrace
-2420804 root      20   0    5112   2852   2468 R  36.9   0.0   0:02.33 ltrace
-2420842 root      20   0    5112   3044   2532 S  36.9   0.0   0:02.19 ltrace
-2420984 root      20   0   80116   3712   3584 R  36.9   0.0   0:02.28 factori+
-2420809 root      20   0    5112   2980   2468 S  36.5   0.0   0:02.22 ltrace
-2420878 root      20   0    5112   2852   2468 R  36.5   0.0   0:02.23 ltrace
-2420966 root      20   0   80116   3584   3456 R  36.5   0.0   0:02.26 factori+
-2421037 root      20   0   80116   3712   3584 R  36.5   0.0   0:02.28 factori+
-2421100 root      20   0   80116   3712   3584 R  36.5   0.0   0:02.28 factori+
-2421166 root      20   0   80116   3712   3584 R  36.5   0.0   0:02.28 factori+
-2421030 root      20   0   80116   3712   3584 R  36.2   0.0   0:02.28 factori+
-2421053 root      20   0   80116   3584   3456 R  36.2   0.0   0:02.27 factori+
-2420810 root      20   0    5112   2872   2488 R  35.9   0.0   0:02.27 ltrace
-2420884 root      20   0    5112   2872   2488 R  35.9   0.0   0:02.20 ltrace
-2420977 root      20   0   80116   3456   3328 R  35.9   0.0   0:02.25 factori+
-2421149 root      20   0   80116   3712   3584 R  35.9   0.0   0:02.27 factori+
-2420860 root      20   0    5112   3060   2548 R  35.5   0.0   0:02.17 ltrace
-2421253 root      20   0   80116   3712   3584 S  35.5   0.0   0:02.24 factori+
-2420888 root      20   0   80116   3456   3456 R  20.3   0.0   0:01.25 factori+
-2420887 root      20   0   80116   3712   3584 t  19.6   0.0   0:01.20 factori+
-2420892 root      20   0   80116   3584   3456 t  19.6   0.0   0:01.21 factori+
-2420944 root      20   0   80116   3712   3584 t  19.6   0.0   0:01.21 factori+
-2420958 root      20   0   80116   3584   3456 R  19.6   0.0   0:01.21 factori+
-2420899 root      20   0   80116   3712   3584 t  19.3   0.0   0:01.20 factori+
-2420914 root      20   0   80116   3456   3456 t  19.3   0.0   0:01.19 factori+
-2420847 root      20   0   19564   3456   2944 S  18.9   0.0   0:01.16 strace
-2420882 root      20   0   80116   3712   3584 R  18.9   0.0   0:01.19 factori+
-2420900 root      20   0   80116   3584   3456 t  18.9   0.0   0:01.19 factori+
-2421061 root      20   0   80116   3456   3456 R  18.9   0.0   0:01.18 factori+
-2420817 root      20   0   19564   3456   2944 R  18.3   0.0   0:01.11 strace
-2420833 root      20   0   19564   3456   2944 R  18.3   0.0   0:01.11 strace
-2420883 root      20   0   19564   3456   2944 R  18.3   0.0   0:01.12 strace
-2420813 root      20   0   19564   3456   2944 S  17.9   0.0   0:01.10 strace
-2420818 root      20   0   19564   3456   2944 S  17.9   0.0   0:01.10 strace
-2420853 root      20   0   19564   3456   2944 R  17.9   0.0   0:01.11 strace
-2420873 root      20   0   19564   3456   2944 R  17.9   0.0   0:01.11 strace
-2420890 root      20   0   19564   3456   2944 S  17.9   0.0   0:01.09 strace
-2420874 root      20   0   19564   3456   2944 R  17.6   0.0   0:01.09 strace
-2420904 root      20   0   80116   3712   3584 t  15.0   0.0   0:00.92 factori+
-2420832 root      20   0   80116   3584   3456 t  14.3   0.0   0:00.88 factori+
-2420875 root      20   0   80116   3712   3584 S  14.3   0.0   0:00.88 factori+
-2420894 root      20   0   80116   3584   3456 t  14.3   0.0   0:00.90 factori+
-2420839 root      20   0   80116   3584   3456 t  14.0   0.0   0:00.86 factori+
-2420852 root      20   0   80116   3584   3456 t  14.0   0.0   0:00.87 factori+
-2420846 root      20   0   80116   3712   3584 t  13.6   0.0   0:00.85 factori+
-2420907 root      20   0   80116   3456   3328 t  13.6   0.0   0:00.88 factori+
-2420909 root      20   0   80116   3584   3456 t  13.6   0.0   0:00.86 factori+
-2420930 root      20   0   80116   3584   3456 t  13.6   0.0   0:00.84 factori+
+  45358 root      20   0    6376   3328   3200 R  76.6   0.0   0:02.39 factori+
+  45363 root      20   0    6376   3328   3200 R  75.2   0.0   0:02.49 factori+
+  45366 root      20   0    6376   3200   3072 R  72.6   0.0   0:02.41 factori+
+  45379 root      20   0    6376   3328   3200 R  69.0   0.0   0:02.17 factori+
+  45310 root      20   0    6376   3328   3200 R  67.0   0.0   0:02.09 factori+
+  45380 root      20   0    6376   3328   3200 R  63.7   0.0   0:02.00 factori+
+  45312 root      20   0    6376   3328   3200 R  60.7   0.0   0:02.02 factori+
+  45343 root      20   0    6376   3328   3200 R  60.1   0.0   0:02.02 factori+
+  45362 root      20   0    6376   3328   3200 R  59.1   0.0   0:01.92 factori+
+  45373 root      20   0    6376   3328   3200 R  56.8   0.0   0:01.83 factori+
+  45376 root      20   0    6376   3328   3200 R  56.4   0.0   0:01.78 factori+
+  45374 root      20   0    6376   3328   3200 R  55.8   0.0   0:01.86 factori+
+  45337 root      20   0    6376   3328   3200 R  55.4   0.0   0:01.78 factori+
+  45359 root      20   0    6376   3328   3200 R  52.8   0.0   0:01.67 factori+
+  45331 root      20   0    6376   3328   3200 R  52.5   0.0   0:01.74 factori+
+  45305 root      20   0    6376   3328   3200 R  51.8   0.0   0:01.67 factori+
+  45382 root      20   0    6376   3328   3200 R  51.8   0.0   0:01.63 factori+
+  45383 root      20   0    6376   3328   3200 R  51.5   0.0   0:01.65 factori+
+  45377 root      20   0    6376   3328   3200 R  50.8   0.0   0:01.71 factori+
+  45381 root      20   0    6376   3328   3200 R  49.2   0.0   0:01.55 factori+
+  45350 root      20   0    6376   3328   3200 R  48.5   0.0   0:01.59 factori+
+  45361 root      20   0    6376   3328   3200 R  47.5   0.0   0:01.66 factori+
+  45340 root      20   0    6376   3328   3200 R  45.9   0.0   0:01.48 factori+
+  45385 root      20   0    6376   3328   3200 R  45.5   0.0   0:01.46 factori+
+  45384 root      20   0    6376   3328   3200 R  34.0   0.0   0:01.08 factori+
+  45313 root      20   0    6376   3328   3200 R  33.7   0.0   0:01.08 factori+
+  45365 root      20   0    6376   3328   3200 R  33.7   0.0   0:01.11 factori+
+  45387 root      20   0    6376   3328   3200 R  33.7   0.0   0:01.09 factori+
+  45386 root      20   0    6376   3328   3200 R  33.3   0.0   0:01.06 factori+
+  45388 root      20   0    6376   3328   3200 R  33.3   0.0   0:01.06 factori+
 ```
 
 **Программа `io-lat-write`**
@@ -735,7 +697,7 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21365.8 avail Mem
 
 **Программа `combined`**
 
-Единичный экземпляр, количество итерации --factorize-iterations 20000 --io-iterations 500
+Единичный экземпляр, количество итерации --factorize-iterations 500000 --io-iterations 500
 
 - [perf](src/tests/combined/single/perf.log)
 ```
@@ -743,63 +705,63 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21365.8 avail Mem
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.00045212 seconds
-Minimum write latency: 0.000425847 seconds
-Maximum write latency: 0.00059179 seconds
+Average write latency: 0.000420547 seconds
+Minimum write latency: 0.000406768 seconds
+Maximum write latency: 0.000525686 seconds
 Both benchmarks have completed successfully.
 
- Performance counter stats for '../../cmake-build-debug/combined --factorize-iterations 20000 --io-iterations 500':
+ Performance counter stats for '../../cmake-build-debug/combined --factorize-iterations 500000 --io-iterations 500':
 
-          1,395.85 msec task-clock                       #    1.180 CPUs utilized             
-            21,254      context-switches                 #   15.227 K/sec                     
-             1,147      cpu-migrations                   #  821.723 /sec                      
-               151      page-faults                      #  108.178 /sec                      
-     1,259,419,434      cpu_atom/cycles/                 #    0.902 GHz                         (77.75%)
-     3,186,887,694      cpu_core/cycles/                 #    2.283 GHz                         (36.92%)
-     1,607,384,429      cpu_atom/instructions/           #    1.28  insn per cycle              (47.14%)
-     5,397,845,206      cpu_core/instructions/           #    4.29  insn per cycle              (42.43%)
-       208,210,000      cpu_atom/branches/               #  149.164 M/sec                       (4.91%)
-       971,328,007      cpu_core/branches/               #  695.870 M/sec                       (49.86%)
-           802,308      cpu_atom/branch-misses/          #    0.39% of all branches             (11.74%)
-         2,297,064      cpu_core/branch-misses/          #    1.10% of all branches             (56.56%)
-             TopdownL1 (cpu_core)                 #     42.3 %  tma_backend_bound      
-                                                  #      3.2 %  tma_bad_speculation    
-                                                  #     24.5 %  tma_frontend_bound     
-                                                  #     30.0 %  tma_retiring             (63.09%)
-             TopdownL1 (cpu_atom)                 #    -14.7 %  tma_bad_speculation    
-                                                  #     21.6 %  tma_retiring             (12.62%)
-                                                  #     74.9 %  tma_backend_bound      
-                                                  #     74.9 %  tma_backend_bound_aux  
-                                                  #     18.2 %  tma_frontend_bound       (12.84%)
-     2,783,830,866      L1-dcache-loads                  #    1.994 G/sec                       (30.55%)
-     1,466,322,184      L1-dcache-loads                  #    1.050 G/sec                       (66.86%)
+          4,425.31 msec task-clock                       #    0.944 CPUs utilized             
+               514      context-switches                 #  116.150 /sec                      
+                 4      cpu-migrations                   #    0.904 /sec                      
+               136      page-faults                      #   30.732 /sec                      
+    13,358,450,062      cpu_atom/cycles/                 #    3.019 GHz                         (0.00%)
+    20,435,379,694      cpu_core/cycles/                 #    4.618 GHz                         (37.09%)
+    10,076,816,936      cpu_atom/instructions/           #    0.75  insn per cycle              (0.01%)
+    23,878,666,902      cpu_core/instructions/           #    1.79  insn per cycle              (44.12%)
+     1,803,587,396      cpu_atom/branches/               #  407.562 M/sec                       (0.01%)
+     4,292,767,484      cpu_core/branches/               #  970.050 M/sec                       (51.08%)
+        16,831,607      cpu_atom/branch-misses/          #    0.93% of all branches             (0.01%)
+         3,496,444      cpu_core/branch-misses/          #    0.19% of all branches             (58.07%)
+             TopdownL1 (cpu_core)                 #     62.4 %  tma_backend_bound      
+                                                  #      2.0 %  tma_bad_speculation    
+                                                  #     13.3 %  tma_frontend_bound     
+                                                  #     22.4 %  tma_retiring             (65.02%)
+             TopdownL1 (cpu_atom)                 #     -4.7 %  tma_bad_speculation    
+                                                  #     18.5 %  tma_retiring             (0.01%)
+                                                  #     78.6 %  tma_backend_bound      
+                                                  #     78.6 %  tma_backend_bound_aux  
+                                                  #      7.5 %  tma_frontend_bound       (0.01%)
+     <not counted>      L1-dcache-loads                                                         (0.00%)
+    10,156,647,748      L1-dcache-loads                  #    2.295 G/sec                       (71.28%)
    <not supported>      L1-dcache-load-misses                                                 
-        40,780,282      L1-dcache-load-misses            #    1.46% of all L1-dcache accesses   (69.37%)
-        26,713,901      LLC-loads                        #   19.138 M/sec                       (48.03%)
-         8,183,134      LLC-loads                        #    5.862 M/sec                       (67.31%)
-                 0      LLC-load-misses                                                         (47.94%)
-           252,581      LLC-load-misses                  #    0.95% of all LL-cache accesses    (68.34%)
-       323,005,084      L1-icache-loads                  #  231.404 M/sec                       (72.71%)
+         5,080,950      L1-dcache-load-misses                                                   (71.58%)
+     <not counted>      LLC-loads                                                               (0.00%)
+         1,248,643      LLC-loads                        #  282.160 K/sec                       (71.56%)
+     <not counted>      LLC-load-misses                                                         (0.00%)
+           130,701      LLC-load-misses                                                         (71.31%)
+     <not counted>      L1-icache-loads                                                         (0.00%)
    <not supported>      L1-icache-loads                                                       
-       331,173,893      L1-icache-load-misses            #  102.53% of all L1-icache accesses   (71.03%)
-       102,649,308      L1-icache-load-misses            #   31.78% of all L1-icache accesses   (31.49%)
-       564,573,496      dTLB-loads                       #  404.467 M/sec                       (70.92%)
-     1,370,090,447      dTLB-loads                       #  981.548 M/sec                       (30.60%)
-            26,353      dTLB-load-misses                 #    0.00% of all dTLB cache accesses  (64.20%)
-           251,675      dTLB-load-misses                 #    0.04% of all dTLB cache accesses  (32.51%)
+     <not counted>      L1-icache-load-misses                                                   (0.00%)
+        60,621,866      L1-icache-load-misses                                                   (28.71%)
+     <not counted>      dTLB-loads                                                              (0.00%)
+    10,168,036,508      dTLB-loads                       #    2.298 G/sec                       (28.40%)
+     <not counted>      dTLB-load-misses                                                        (0.00%)
+            13,574      dTLB-load-misses                                                        (28.43%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-        28,190,572      iTLB-load-misses                                                        (77.58%)
-            32,916      iTLB-load-misses                                                        (31.17%)
+     <not counted>      iTLB-load-misses                                                        (0.00%)
+           524,043      iTLB-load-misses                                                        (28.68%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       1.182892661 seconds time elapsed
+       4.686463132 seconds time elapsed
 
-       0.214181000 seconds user
-       0.666735000 seconds sys
+       4.234152000 seconds user
+       0.194580000 seconds sys
 ```
 
 - [ltrace](src/tests/combined/single/ltrace.log)
@@ -808,34 +770,44 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.205892 seconds
-Minimum write latency: 0.131117 seconds
-Maximum write latency: 0.511823 seconds
+Average write latency: 0.124983 seconds
+Minimum write latency: 0.108515 seconds
+Maximum write latency: 0.205589 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
-100.00  104.680557    52340278         2 _ZNSt6thread4joinEv
-  0.00    0.000471         235         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  0.00    0.000207          20        10 strlen
-  0.00    0.000200          20        10 __errno_location
-  0.00    0.000161          20         8 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
-  0.00    0.000113          28         4 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000094          47         2 _Znwm
-  0.00    0.000088          22         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000086          21         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000083          20         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-  0.00    0.000083          20         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000081          20         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000081          20         4 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000064          32         2 _ZNSolsEPFRSoS_E
-  0.00    0.000041          20         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000040          20         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv
-  0.00    0.000040          20         2 memcmp
-  0.00    0.000029          29         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
-  0.00    0.000023          23         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc
-  0.00    0.000021          21         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
+ 48.37   22.308945          21   1024000 _ZNSo5writeEPKcl
+ 46.59   21.488394          20   1024500 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
+  4.75    2.190172        4380       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+  0.19    0.088527         177       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
+  0.05    0.023823          23      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.02    0.011319          22       500 _ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+  0.02    0.010510          21       500 _ZNSo5flushEv
+  0.00    0.000508          26        19 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000387          38        10 __errno_location
+  0.00    0.000386          38        10 strlen
+  0.00    0.000311          38         8 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
+  0.00    0.000290          26        11 _Znwm
+  0.00    0.000244          22        11 _ZdlPvm
+  0.00    0.000212          53         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000201          22         9 memmove
+  0.00    0.000200          50         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000179          59         3 _ZNSolsEPFRSoS_E
+  0.00    0.000164          20         8 _ZNSolsEx
+  0.00    0.000160          40         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000158          39         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000155          38         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000154          38         4 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000088          44         2 memcmp
+  0.00    0.000078          26         3 _ZNSolsEd
+  0.00    0.000077          38         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  0.00    0.000077          38         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv
+  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc
+  0.00    0.000040          40         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000039          39         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
+  0.00    0.000032          32         1 memset
 ------ ----------- ----------- --------- --------------------
-100.00  104.682563                    73 total
+100.00   46.125870               2051626 total
 ```
 
 - [strace](src/tests/combined/single/strace.log)
@@ -844,59 +816,57 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.000447872 seconds
-Minimum write latency: 0.000401925 seconds
-Maximum write latency: 0.000778924 seconds
+Average write latency: 0.00146576 seconds
+Minimum write latency: 0.00126586 seconds
+Maximum write latency: 0.00286453 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.264059      132029         2           futex
-  0.00    0.000005           2         2           write
+ 64.75    0.199747           3     64000           writev
+ 18.96    0.058480         115       505           openat
+ 16.28    0.050238          99       505           close
+  0.00    0.000014           4         3           write
+  0.00    0.000008           2         3           brk
+  0.00    0.000003           0         6           fstat
+  0.00    0.000003           3         1           futex
+  0.00    0.000003           3         1           getrandom
   0.00    0.000000           0         4           read
-  0.00    0.000000           0         5           close
-  0.00    0.000000           0         6           fstat
-  0.00    0.000000           0        24           mmap
-  0.00    0.000000           0         8           mprotect
+  0.00    0.000000           0        22           mmap
+  0.00    0.000000           0         6           mprotect
   0.00    0.000000           0         1           munmap
-  0.00    0.000000           0         3           brk
-  0.00    0.000000           0         1           rt_sigaction
-  0.00    0.000000           0         5           rt_sigprocmask
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
   0.00    0.000000           0         1           arch_prctl
   0.00    0.000000           0         1           set_tid_address
-  0.00    0.000000           0         5           openat
   0.00    0.000000           0         1           set_robust_list
   0.00    0.000000           0         1           prlimit64
-  0.00    0.000000           0         1           getrandom
   0.00    0.000000           0         1           rseq
-  0.00    0.000000           0         2           clone3
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.264064        3385        78         1 total
+100.00    0.308496           4     65066         1 total
 ```
 
 - [top](src/tests/combined/single/top.log)
 ```
-top - 22:34:25 up  1:28,  1 user,  load average: 1.45, 2.79, 2.53
-Tasks: 381 total,   1 running, 380 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  4.2 us,  8.4 sy,  0.0 ni, 84.4 id,  2.4 wa,  0.0 hi,  0.6 si,  0.0 st 
-MiB Mem :  31715.9 total,  11130.5 free,  10264.7 used,  12071.3 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21451.3 avail Mem 
+top - 21:37:10 up  2:04,  1 user,  load average: 1.39, 1.11, 1.61
+Tasks: 421 total,   2 running, 419 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 13.8 us,  1.2 sy,  0.0 ni, 85.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12560.6 free,   9430.7 used,  11619.5 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22285.3 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-2380747 root      20   0  227580   3584   3456 S  90.0   0.0   0:00.18 combined
-    127 root      20   0       0      0      0 I  10.0   0.0   0:00.59 kworker+
-  14728 root      20   0       0      0      0 I  10.0   0.0   0:03.57 kworker+
-      1 root      20   0   23684  14176   9440 S   0.0   0.0   0:02.94 systemd
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+  44725 root      20   0    6376   3328   3200 R  90.9   0.0   0:00.20 combined
+  40294 glebmavi  20   0 9538720   3.1g 711172 S  36.4  10.0   7:23.97 clion
+  18619 glebmavi  20   0 4176824 521368 255788 S   9.1   1.6   8:04.62 firefox
+  29461 glebmavi  20   0 3194688 762712 126360 S   9.1   2.3   7:56.04 Isolate+
+      1 root      20   0   23780  14312   9064 S   0.0   0.0   0:04.98 systemd
 ```
 
 - flamegraph
 
 ![flamegraph](src/tests/combined/single/flamegraph.svg)
 
-Множество экземпляров 10, количество итерации --factorize-iterations 10000 --io-iterations 100
+Множество экземпляров 10, количество итерации --factorize-iterations 500000 --io-iterations 100
 
 Пример одного экземпляра (4го)
 
@@ -906,63 +876,63 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21451.3 avail Mem
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.018125 seconds
-Minimum write latency: 0.000625903 seconds
-Maximum write latency: 0.0670173 seconds
+Average write latency: 0.00103003 seconds
+Minimum write latency: 0.000454086 seconds
+Maximum write latency: 0.0133703 seconds
 Both benchmarks have completed successfully.
 
- Performance counter stats for '../../cmake-build-debug/combined --factorize-iterations 10000 --io-iterations 100':
+ Performance counter stats for '../../cmake-build-debug/combined --factorize-iterations 500000 --io-iterations 100':
 
-          1,007.61 msec task-clock                       #    0.480 CPUs utilized             
-            14,068      context-switches                 #   13.962 K/sec                     
-             6,112      cpu-migrations                   #    6.066 K/sec                     
-               147      page-faults                      #  145.890 /sec                      
-       782,073,676      cpu_atom/cycles/                 #    0.776 GHz                         (24.94%)
-     1,335,572,938      cpu_core/cycles/                 #    1.325 GHz                         (64.93%)
-       632,971,282      cpu_atom/instructions/           #    0.81  insn per cycle              (29.23%)
-     1,285,580,489      cpu_core/instructions/           #    1.64  insn per cycle              (68.82%)
-       121,122,032      cpu_atom/branches/               #  120.208 M/sec                       (27.55%)
-       270,313,929      cpu_core/branches/               #  268.273 M/sec                       (72.38%)
-         1,671,113      cpu_atom/branch-misses/          #    1.38% of all branches             (29.72%)
-         2,197,518      cpu_core/branch-misses/          #    1.81% of all branches             (74.58%)
-             TopdownL1 (cpu_core)                 #     26.1 %  tma_backend_bound      
-                                                  #      4.5 %  tma_bad_speculation    
-                                                  #     36.6 %  tma_frontend_bound     
-                                                  #     32.8 %  tma_retiring             (75.65%)
-             TopdownL1 (cpu_atom)                 #     13.4 %  tma_bad_speculation    
-                                                  #     25.6 %  tma_retiring             (30.78%)
-                                                  #     32.8 %  tma_backend_bound      
-                                                  #     32.8 %  tma_backend_bound_aux  
-                                                  #     28.2 %  tma_frontend_bound       (31.03%)
-       378,996,680      L1-dcache-loads                  #  376.135 M/sec                       (27.97%)
-       619,681,110      L1-dcache-loads                  #  615.002 M/sec                       (71.81%)
+          9,123.54 msec task-clock                       #    0.587 CPUs utilized             
+             3,765      context-switches                 #  412.669 /sec                      
+                36      cpu-migrations                   #    3.946 /sec                      
+               135      page-faults                      #   14.797 /sec                      
+    31,621,536,831      cpu_atom/cycles/                 #    3.466 GHz                         (17.71%)
+    36,778,273,433      cpu_core/cycles/                 #    4.031 GHz                         (18.82%)
+    22,780,981,977      cpu_atom/instructions/           #    0.72  insn per cycle              (20.63%)
+    20,390,250,103      cpu_core/instructions/           #    0.64  insn per cycle              (22.60%)
+     4,140,877,095      cpu_atom/branches/               #  453.868 M/sec                       (20.64%)
+     3,709,552,143      cpu_core/branches/               #  406.592 M/sec                       (26.39%)
+         3,794,843      cpu_atom/branch-misses/          #    0.09% of all branches             (20.63%)
+         2,255,471      cpu_core/branch-misses/          #    0.05% of all branches             (30.13%)
+             TopdownL1 (cpu_core)                 #     55.4 %  tma_backend_bound      
+                                                  #      1.8 %  tma_bad_speculation    
+                                                  #     18.7 %  tma_frontend_bound     
+                                                  #     24.0 %  tma_retiring             (33.89%)
+             TopdownL1 (cpu_atom)                 #      0.8 %  tma_bad_speculation    
+                                                  #     19.6 %  tma_retiring             (20.69%)
+                                                  #     78.7 %  tma_backend_bound      
+                                                  #     78.7 %  tma_backend_bound_aux  
+                                                  #      1.0 %  tma_frontend_bound       (20.74%)
+    22,769,691,348      L1-dcache-loads                  #    2.496 G/sec                       (17.79%)
+     9,220,164,494      L1-dcache-loads                  #    1.011 G/sec                       (37.67%)
    <not supported>      L1-dcache-load-misses                                                 
-        22,054,873      L1-dcache-load-misses            #    5.82% of all L1-dcache accesses   (72.26%)
-       244,848,270      LLC-loads                        #  243.000 M/sec                       (30.80%)
-         7,017,966      LLC-loads                        #    6.965 M/sec                       (71.70%)
-        77,626,914      LLC-load-misses                  #   31.70% of all LL-cache accesses    (29.13%)
-           206,151      LLC-load-misses                  #    0.08% of all LL-cache accesses    (73.41%)
-       390,637,956      L1-icache-loads                  #  387.688 M/sec                       (29.69%)
+         1,471,095      L1-dcache-load-misses            #    0.01% of all L1-dcache accesses   (37.67%)
+     6,663,847,380      LLC-loads                        #  730.402 M/sec                       (17.79%)
+           259,116      LLC-loads                        #   28.401 K/sec                       (37.66%)
+    19,834,905,038      LLC-load-misses                  #  297.65% of all LL-cache accesses    (17.73%)
+            15,105      LLC-load-misses                  #    0.00% of all LL-cache accesses    (37.66%)
+    28,215,616,766      L1-icache-loads                  #    3.093 G/sec                       (17.71%)
    <not supported>      L1-icache-loads                                                       
-       247,338,764      L1-icache-load-misses            #   63.32% of all L1-icache accesses   (29.33%)
-        46,264,412      L1-icache-load-misses            #   11.84% of all L1-icache accesses   (35.46%)
-       376,873,606      dTLB-loads                       #  374.028 M/sec                       (29.95%)
-       376,277,918      dTLB-loads                       #  373.437 M/sec                       (58.47%)
-       194,231,155      dTLB-load-misses                 #   51.54% of all dTLB cache accesses  (27.19%)
-           356,501      dTLB-load-misses                 #    0.09% of all dTLB cache accesses  (53.07%)
+        14,863,189      L1-icache-load-misses            #    0.05% of all L1-icache accesses   (17.72%)
+         5,315,035      L1-icache-load-misses            #    0.02% of all L1-icache accesses   (15.05%)
+    35,356,465,874      dTLB-loads                       #    3.875 G/sec                       (17.68%)
+     9,240,614,529      dTLB-loads                       #    1.013 G/sec                       (15.06%)
+     6,594,129,943      dTLB-load-misses                 #   18.65% of all dTLB cache accesses  (17.68%)
+             6,255      dTLB-load-misses                 #    0.00% of all dTLB cache accesses  (15.06%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-        72,888,236      iTLB-load-misses                                                        (26.58%)
-           425,685      iTLB-load-misses                                                        (51.55%)
+     6,460,074,467      iTLB-load-misses                                                        (17.68%)
+            58,117      iTLB-load-misses                                                        (15.06%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       2.100931648 seconds time elapsed
+      15.531439738 seconds time elapsed
 
-       0.137793000 seconds user
-       0.777750000 seconds sys
+       9.041625000 seconds user
+       0.067922000 seconds sys
 ```
 
 - [ltrace](src/tests/combined/multiple/instance_4/ltrace.log)
@@ -971,34 +941,44 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.450196 seconds
-Minimum write latency: 0.296064 seconds
-Maximum write latency: 1.92606 seconds
+Average write latency: 0.279758 seconds
+Minimum write latency: 0.236709 seconds
+Maximum write latency: 0.687073 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 99.99   45.109868    22554934         2 _ZNSt6thread4joinEv
-  0.00    0.000527         263         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  0.00    0.000463          46        10 __errno_location
-  0.00    0.000442          44        10 strlen
-  0.00    0.000353          44         8 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
-  0.00    0.000245          61         4 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000223          55         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-  0.00    0.000196          49         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-  0.00    0.000187          46         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-  0.00    0.000182          45         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-  0.00    0.000181          45         4 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-  0.00    0.000180          45         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-  0.00    0.000169          84         2 _ZNSolsEPFRSoS_E
-  0.00    0.000122          61         2 _Znwm
-  0.00    0.000094          47         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv
-  0.00    0.000090          45         2 memcmp
-  0.00    0.000088          44         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
-  0.00    0.000050          50         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
-  0.00    0.000045          45         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc
-  0.00    0.000044          44         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
+ 52.29   10.257751          50    204800 _ZNSo5writeEPKcl
+ 47.39    9.295529          45    204900 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
+  0.10    0.020020         200       100 _ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
+  0.09    0.017178         171       100 _ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+  0.05    0.009356          46       200 _ZNSt6chrono3_V212system_clock3nowEv
+  0.02    0.004800          48       100 _ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+  0.02    0.004467          44       100 _ZNSo5flushEv
+  0.01    0.001070         107        10 __errno_location
+  0.00    0.000960          50        19 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000595          74         8 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
+  0.00    0.000585          58        10 strlen
+  0.00    0.000441          49         9 _Znwm
+  0.00    0.000369          41         9 _ZdlPvm
+  0.00    0.000358          44         8 _ZNSolsEx
+  0.00    0.000314          44         7 memmove
+  0.00    0.000213          53         4 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+  0.00    0.000212          53         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+  0.00    0.000212          53         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+  0.00    0.000198          49         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
+  0.00    0.000181          45         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+  0.00    0.000171          42         4 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
+  0.00    0.000166          55         3 _ZNSolsEPFRSoS_E
+  0.00    0.000155          51         3 _ZNSolsEd
+  0.00    0.000129          64         2 memcmp
+  0.00    0.000104          52         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv
+  0.00    0.000096          48         2 _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+  0.00    0.000048          48         1 memset
+  0.00    0.000037          37         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000035          35         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc
+  0.00    0.000033          33         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
 ------ ----------- ----------- --------- --------------------
-100.00   45.113749                    73 total
+100.00   19.615783                410420 total
 ```
 
 - [strace](src/tests/combined/multiple/instance_4/strace.log)
@@ -1007,159 +987,138 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.0163696 seconds
-Minimum write latency: 0.000762065 seconds
-Maximum write latency: 0.0845601 seconds
+Average write latency: 0.0162473 seconds
+Minimum write latency: 0.00463389 seconds
+Maximum write latency: 0.0728105 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.275816       91938         3           futex
-  0.00    0.000004           2         2           write
+ 84.29    0.103302           8     12800           writev
+  8.41    0.010303          98       105           openat
+  7.30    0.008950          85       105           close
+  0.00    0.000004           1         3           write
   0.00    0.000000           0         4           read
-  0.00    0.000000           0         5           close
   0.00    0.000000           0         6           fstat
-  0.00    0.000000           0        24           mmap
-  0.00    0.000000           0         8           mprotect
+  0.00    0.000000           0        22           mmap
+  0.00    0.000000           0         6           mprotect
   0.00    0.000000           0         1           munmap
   0.00    0.000000           0         3           brk
-  0.00    0.000000           0         1           rt_sigaction
-  0.00    0.000000           0         5           rt_sigprocmask
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
   0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           futex
   0.00    0.000000           0         1           set_tid_address
-  0.00    0.000000           0         5           openat
   0.00    0.000000           0         1           set_robust_list
   0.00    0.000000           0         1           prlimit64
   0.00    0.000000           0         1           getrandom
   0.00    0.000000           0         1           rseq
-  0.00    0.000000           0         2           clone3
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.275820        3491        79         1 total
+100.00    0.122559           9     13066         1 total
 ```
 
 - [`top` во время исполнения всех экземпляров](src/tests/combined/multiple/top.log)
 ```
-top - 22:37:28 up  1:31,  1 user,  load average: 10.42, 6.94, 4.25
-Tasks: 480 total,  14 running, 460 sleeping,   6 stopped,   0 zombie
-%Cpu(s): 28.5 us, 68.6 sy,  0.0 ni,  2.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :  31715.9 total,  11026.2 free,  10368.1 used,  12073.0 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21347.8 avail Mem 
+top - 21:40:47 up  2:08,  1 user,  load average: 10.74, 4.05, 2.52
+Tasks: 519 total,  31 running, 488 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 99.8 us,  0.2 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12488.2 free,   9502.0 used,  11624.7 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22213.9 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-3921483 root      20   0  227580   3712   3584 S  54.5   0.0   0:00.08 combined
-3922274 root      20   0  227580   3712   3584 S  54.5   0.0   0:00.08 combined
-3921212 root      20   0    5112   3056   2544 R  45.5   0.0   0:00.07 ltrace
-3921298 root      20   0  227580   3584   3456 S  45.5   0.0   0:00.06 combined
-3921585 root      20   0  227580   3584   3456 S  45.5   0.0   0:00.07 combined
-3921623 root      20   0  227580   3712   3584 S  45.5   0.0   0:00.07 combined
-3921742 root      20   0  227580   3584   3456 S  45.5   0.0   0:00.08 combined
-3921946 root      20   0  227580   3712   3584 S  45.5   0.0   0:00.07 combined
-3921956 root      20   0  227580   3712   3584 S  45.5   0.0   0:00.07 combined
-3922335 root      20   0  227580   3584   3456 S  45.5   0.0   0:00.08 combined
-3922726 root      20   0  227580   3712   3584 S  45.5   0.0   0:00.07 combined
-3921219 root      20   0    5112   3108   2596 R  36.4   0.0   0:00.06 ltrace
-3921246 root      20   0    5112   3108   2596 R  36.4   0.0   0:00.06 ltrace
-3921247 root      20   0    5112   2808   2424 R  36.4   0.0   0:00.06 ltrace
-3921250 root      20   0    5112   3060   2548 R  36.4   0.0   0:00.06 ltrace
-3921283 root      20   0  227580   3712   3584 S  36.4   0.0   0:00.06 combined
-3921299 root      20   0  227580   3712   3584 S  36.4   0.0   0:00.05 combined
-3921326 root      20   0  227580   3712   3584 S  36.4   0.0   0:00.06 combined
-3921609 root      20   0  227580   3456   3328 S  36.4   0.0   0:00.07 combined
-3921217 root      20   0    5112   3060   2548 R  27.3   0.0   0:00.05 ltrace
-3921223 root      20   0    5112   2872   2488 R  27.3   0.0   0:00.05 ltrace
-3921232 root      20   0    5112   2808   2424 R  27.3   0.0   0:00.06 ltrace
-3921269 root      20   0    5112   2872   2488 R  27.3   0.0   0:00.06 ltrace
-3921279 root      20   0    5112   3148   2636 R  27.3   0.0   0:00.06 ltrace
-3921300 root      20   0  227580   3712   3584 S  27.3   0.0   0:00.05 combined
-3921306 root      20   0  227580   3712   3584 S  27.3   0.0   0:00.05 combined
-3921310 root      20   0  227580   3712   3584 S  27.3   0.0   0:00.05 combined
-3921316 root      20   0  227580   3584   3456 S  27.3   0.0   0:00.06 combined
-3921325 root      20   0  227580   3712   3584 S  27.3   0.0   0:00.05 combined
-3921327 root      20   0  227580   3712   3584 S  27.3   0.0   0:00.05 combined
-3921260 root      20   0  227580   3712   3584 t  18.2   0.0   0:00.02 combined
-     10 root      20   0       0      0      0 R   9.1   0.0   0:01.00 kworker+
-     16 root      20   0       0      0      0 R   9.1   0.0   0:00.41 ksoftir+
-     36 root      20   0       0      0      0 S   9.1   0.0   0:00.90 ksoftir+
-     42 root      20   0       0      0      0 S   9.1   0.0   0:01.49 ksoftir+
-     90 root      20   0       0      0      0 S   9.1   0.0   0:00.83 ksoftir+
-   9960 root      20   0       0      0      0 I   9.1   0.0   0:00.98 kworker+
-3921186 root      20   0   23168   5376   3328 R   9.1   0.0   0:00.01 top
-3921263 root      20   0  227580   3584   3456 t   9.1   0.0   0:00.01 combined
-3921264 root      20   0  227580   3712   3584 S   9.1   0.0   0:00.01 combined
-3921268 root      20   0  227580   3584   3456 t   9.1   0.0   0:00.01 combined
-3921282 root      20   0  227580   3584   3456 S   9.1   0.0   0:00.01 combined
-3921285 root      20   0  227580   3584   3456 t   9.1   0.0   0:00.01 combined
-3921288 root      20   0  227580   3456   3328 S   9.1   0.0   0:00.01 combined
-3921296 root      20   0  227580   3584   3456 t   9.1   0.0   0:00.01 combined
-3921301 root      20   0  227580   3584   3456 t   9.1   0.0   0:00.01 combined
-3921305 root      20   0  227580   3712   3584 S   9.1   0.0   0:00.01 combined
-      1 root      20   0   23684  14176   9440 S   0.0   0.0   0:02.95 systemd
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+  45643 root      20   0    6376   3328   3200 R  91.7   0.0   0:02.96 combined
+  45620 root      20   0    6376   3328   3200 R  88.4   0.0   0:02.88 combined
+  45567 root      20   0    6376   3200   3072 R  79.8   0.0   0:02.62 combined
+  45575 root      20   0    6376   3200   3200 R  79.5   0.0   0:02.54 combined
+  45650 root      20   0    6376   3328   3200 R  68.2   0.0   0:02.15 combined
+  45597 root      20   0    6376   3328   3200 R  62.3   0.0   0:02.04 combined
+  45655 root      20   0    6376   3328   3200 R  62.3   0.0   0:01.96 combined
+  45573 root      20   0    6376   3072   2944 R  60.3   0.0   0:01.92 combined
+  45649 root      20   0    6376   3328   3200 R  57.6   0.0   0:01.82 combined
+  45631 root      20   0    6376   3328   3200 R  54.3   0.0   0:01.71 combined
+  45634 root      20   0    6376   3328   3200 R  52.3   0.0   0:01.70 combined
+  45642 root      20   0    6376   3328   3200 R  51.3   0.0   0:01.70 combined
+  45656 root      20   0    6376   3328   3200 R  50.3   0.0   0:01.58 combined
+  45590 root      20   0    6376   3328   3200 R  49.0   0.0   0:01.58 combined
+  45609 root      20   0    6376   3328   3200 R  48.7   0.0   0:01.66 combined
+  45572 root      20   0    6376   3200   3072 R  47.4   0.0   0:01.53 combined
+  45653 root      20   0    6376   3328   3200 R  47.0   0.0   0:01.50 combined
+  45647 root      20   0    6376   3328   3200 R  46.4   0.0   0:01.50 combined
+  45569 root      20   0    6376   3328   3200 R  45.7   0.0   0:01.45 combined
+  45646 root      20   0    6376   3328   3200 R  45.4   0.0   0:01.46 combined
+  45621 root      20   0    6376   3328   3200 R  43.7   0.0   0:01.44 combined
+  45648 root      20   0    6376   3328   3200 R  43.7   0.0   0:01.41 combined
+  45654 root      20   0    6376   3328   3200 R  43.0   0.0   0:01.39 combined
+  45640 root      20   0    6376   3328   3200 R  42.1   0.0   0:01.38 combined
+  45593 root      20   0    6376   3328   3200 R  39.7   0.0   0:01.27 combined
+  45603 root      20   0    6376   3328   3200 R  38.7   0.0   0:01.26 combined
+  45645 root      20   0    6376   3328   3200 R  38.1   0.0   0:01.21 combined
+  45652 root      20   0    6376   3328   3200 R  36.8   0.0   0:01.16 combined
+  45624 root      20   0    6376   3328   3200 R  36.4   0.0   0:01.16 combined
+  45651 root      20   0    6376   3328   3200 R  35.8   0.0   0:01.15 combined
 ```
 
 **Программа `factorize` с агрессивной оптимизацией**
 
-Единичный экземпляр, количество итерации 100000
+Единичный экземпляр, количество итерации 100000000
 
 - [perf](src/tests/factorize_fast/single/perf.log)
 ```
 === Starting ../../cmake-build-release/factorize benchmark ===
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
- Performance counter stats for '../../cmake-build-release/factorize 100000':
+ Performance counter stats for '../../cmake-build-release/factorize 100000000':
 
-          3,684.12 msec task-clock                       #    0.921 CPUs utilized             
-           101,138      context-switches                 #   27.452 K/sec                     
-             1,904      cpu-migrations                   #  516.812 /sec                      
-               137      page-faults                      #   37.187 /sec                      
-     3,148,005,996      cpu_atom/cycles/                 #    0.854 GHz                         (4.86%)
-     9,958,174,979      cpu_core/cycles/                 #    2.703 GHz                         (33.19%)
-       548,025,206      cpu_atom/instructions/           #    0.17  insn per cycle              (59.59%)
-    15,276,109,983      cpu_core/instructions/           #    4.85  insn per cycle              (40.01%)
-       138,533,045      cpu_atom/branches/               #   37.603 M/sec                       (64.57%)
-     2,795,731,916      cpu_core/branches/               #  758.859 M/sec                       (47.80%)
-           965,135      cpu_atom/branch-misses/          #    0.70% of all branches             (70.84%)
-         6,876,181      cpu_core/branch-misses/          #    4.96% of all branches             (54.28%)
-             TopdownL1 (cpu_core)                 #     44.2 %  tma_backend_bound      
-                                                  #      3.1 %  tma_bad_speculation    
-                                                  #     24.1 %  tma_frontend_bound     
-                                                  #     28.5 %  tma_retiring             (61.59%)
-             TopdownL1 (cpu_atom)                 #     14.6 %  tma_bad_speculation    
-                                                  #     16.0 %  tma_retiring             (71.29%)
-                                                  #     26.2 %  tma_backend_bound      
-                                                  #     26.2 %  tma_backend_bound_aux  
-                                                  #     43.2 %  tma_frontend_bound       (54.96%)
-       933,454,447      L1-dcache-loads                  #  253.372 M/sec                       (36.56%)
-     4,055,820,835      L1-dcache-loads                  #    1.101 G/sec                       (68.94%)
+            140.77 msec task-clock                       #    0.994 CPUs utilized             
+                17      context-switches                 #  120.763 /sec                      
+                 1      cpu-migrations                   #    7.104 /sec                      
+               128      page-faults                      #  909.272 /sec                      
+       479,859,265      cpu_atom/cycles/                 #    3.409 GHz                         (0.27%)
+       644,109,797      cpu_core/cycles/                 #    4.576 GHz                         (35.95%)
+       378,696,571      cpu_atom/instructions/           #    0.79  insn per cycle              (0.31%)
+     2,236,867,745      cpu_core/instructions/           #    4.66  insn per cycle              (43.03%)
+        68,710,624      cpu_atom/branches/               #  488.099 M/sec                       (0.31%)
+       412,739,335      cpu_core/branches/               #    2.932 G/sec                       (50.11%)
+         2,815,895      cpu_atom/branch-misses/          #    4.10% of all branches             (0.31%)
+            23,771      cpu_core/branch-misses/          #    0.03% of all branches             (57.22%)
+             TopdownL1 (cpu_core)                 #      2.0 %  tma_backend_bound      
+                                                  #      1.2 %  tma_bad_speculation    
+                                                  #     43.0 %  tma_frontend_bound     
+                                                  #     53.9 %  tma_retiring             (64.28%)
+             TopdownL1 (cpu_atom)                 #      5.9 %  tma_bad_speculation    
+                                                  #     20.7 %  tma_retiring             (0.31%)
+                                                  #     41.6 %  tma_backend_bound      
+                                                  #     41.6 %  tma_backend_bound_aux  
+                                                  #     31.7 %  tma_frontend_bound       (0.31%)
+     <not counted>      L1-dcache-loads                                                         (0.00%)
+       502,908,979      L1-dcache-loads                  #    3.573 G/sec                       (70.63%)
    <not supported>      L1-dcache-load-misses                                                 
-       187,089,935      L1-dcache-load-misses            #   20.04% of all L1-dcache accesses   (69.91%)
-       150,071,199      LLC-loads                        #   40.735 M/sec                       (30.25%)
-        37,086,301      LLC-loads                        #   10.067 M/sec                       (69.51%)
-               162      LLC-load-misses                  #    0.00% of all LL-cache accesses    (31.99%)
-           594,970      LLC-load-misses                  #    0.40% of all LL-cache accesses    (71.72%)
-     1,243,571,657      L1-icache-loads                  #  337.549 M/sec                       (31.83%)
+            52,489      L1-dcache-load-misses                                                   (70.64%)
+     <not counted>      LLC-loads                                                               (0.00%)
+            15,733      LLC-loads                        #  111.762 K/sec                       (70.64%)
+     <not counted>      LLC-load-misses                                                         (0.00%)
+             1,728      LLC-load-misses                                                         (70.71%)
+     <not counted>      L1-icache-loads                                                         (0.00%)
    <not supported>      L1-icache-loads                                                       
-       253,769,842      L1-icache-load-misses            #   20.41% of all L1-icache accesses   (31.88%)
-       242,774,562      L1-icache-load-misses            #   19.52% of all L1-icache accesses   (28.54%)
-     1,152,758,310      dTLB-loads                       #  312.899 M/sec                       (31.82%)
-     3,929,857,836      dTLB-loads                       #    1.067 G/sec                       (28.47%)
-           327,726      dTLB-load-misses                 #    0.03% of all dTLB cache accesses  (30.22%)
-         1,478,334      dTLB-load-misses                 #    0.13% of all dTLB cache accesses  (28.75%)
+     <not counted>      L1-icache-load-misses                                                   (0.00%)
+            63,266      L1-icache-load-misses                                                   (29.06%)
+     <not counted>      dTLB-loads                                                              (0.00%)
+       504,117,715      dTLB-loads                       #    3.581 G/sec                       (29.05%)
+     <not counted>      dTLB-load-misses                                                        (0.00%)
+               320      dTLB-load-misses                                                        (29.05%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-        12,788,145      iTLB-load-misses                                                        (8.15%)
-           130,503      iTLB-load-misses                                                        (26.98%)
+     <not counted>      iTLB-load-misses                                                        (0.00%)
+               621      iTLB-load-misses                                                        (28.98%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       4.000926347 seconds time elapsed
+       0.141605995 seconds time elapsed
 
-       0.144226000 seconds user
-       2.617311000 seconds sys
+       0.139219000 seconds user
+       0.002003000 seconds sys
 ```
 
 - [ltrace](src/tests/factorize_fast/single/ltrace.log)
@@ -1168,22 +1127,19 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 66.24   19.108476         191    100000 _ZNSt6thread4joinEv
- 25.65    7.400230          74    100000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  8.11    2.338252          23    100000 _Znwm
-  0.00    0.000206          51         4 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000057          57         1 _ZNSo5flushEv
-  0.00    0.000047          47         1 memcpy
-  0.00    0.000046          46         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000042          42         1 __isoc23_strtol
-  0.00    0.000041          41         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
-  0.00    0.000040          40         1 _ZNSo9_M_insertIxEERSoT_
-  0.00    0.000039          39         1 _ZNSo3putEc
-  0.00    0.000039          39         1 strlen
-  0.00    0.000039          39         1 __errno_location
+ 35.80    0.000498          49        10 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 22.50    0.000313          39         8 _ZNSo9_M_insertIxEERSoT_
+  8.12    0.000113          56         2 _ZNSo5flushEv
+  7.84    0.000109         109         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  5.82    0.000081          40         2 _ZNSo3putEc
+  3.95    0.000055          55         1 memcpy
+  3.67    0.000051          51         1 strlen
+  3.16    0.000044          44         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  3.16    0.000044          44         1 __isoc23_strtol
+  3.02    0.000042          42         1 __errno_location
+  2.95    0.000041          41         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
 ------ ----------- ----------- --------- --------------------
-100.00   28.847595                300014 total
+100.00    0.001391                    29 total
 ```
 
 - [strace](src/tests/factorize_fast/single/strace.log)
@@ -1192,22 +1148,19 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 69.82    0.648036           6    100000           clone3
- 29.83    0.276825           1    200001           rt_sigprocmask
-  0.35    0.003283           3       861        76 futex
   0.00    0.000000           0         4           read
-  0.00    0.000000           0         1           write
+  0.00    0.000000           0         2           write
   0.00    0.000000           0         5           close
   0.00    0.000000           0         6           fstat
-  0.00    0.000000           0        23           mmap
-  0.00    0.000000           0         7           mprotect
+  0.00    0.000000           0        22           mmap
+  0.00    0.000000           0         6           mprotect
   0.00    0.000000           0         1           munmap
   0.00    0.000000           0         3           brk
-  0.00    0.000000           0         1           rt_sigaction
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
   0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           futex
   0.00    0.000000           0         1           set_tid_address
   0.00    0.000000           0         5           openat
   0.00    0.000000           0         1           set_robust_list
@@ -1215,35 +1168,29 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
   0.00    0.000000           0         1           getrandom
   0.00    0.000000           0         1           rseq
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.928144           3    300928        77 total
+100.00    0.000000           0        65         1 total
 ```
 
 - [top](src/tests/factorize_fast/single/top.log)
 ```
-top - 22:38:53 up  1:33,  1 user,  load average: 6.38, 6.86, 4.48
-Tasks: 383 total,   2 running, 381 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  1.2 us,  6.1 sy,  0.0 ni, 92.1 id,  0.0 wa,  0.0 hi,  0.6 si,  0.0 st 
-MiB Mem :  31715.9 total,  11079.5 free,  10312.1 used,  12074.5 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21403.8 avail Mem 
+top - 21:58:21 up  2:25,  1 user,  load average: 0.49, 1.02, 1.77
+Tasks: 418 total,   1 running, 417 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.1 us,  0.4 sy,  0.0 ni, 98.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12432.1 free,   9544.8 used,  11604.4 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22171.2 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
- 328894 root      20   0   80100   3456   3456 R  45.5   0.0   0:00.10 factori+
-     60 root      20   0       0      0      0 S   9.1   0.0   0:00.46 ksoftir+
-     71 root      rt   0       0      0      0 S   9.1   0.0   0:00.96 migrati+
-      1 root      20   0   23684  14176   9440 S   0.0   0.0   0:02.95 systemd
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+  29461 glebmavi  20   0 3237632 788256 126144 S  11.0   2.4  10:01.53 Isolate+
+  40294 glebmavi  20   0 9581924   3.2g 725936 S   7.0  10.3  13:44.44 clion
+  40384 glebmavi  20   0  266.8g 984.1m 326524 S   4.3   3.1   0:55.43 Rider.B+
+  18619 glebmavi  20   0 4176684 519748 256180 S   2.7   1.6   8:59.48 firefox
 ```
 
 - flamegraph
 
 ![flamegraph](src/tests/factorize_fast/single/flamegraph.svg)
 
-Более подробный flamegraph, с увеличенным record frequency (запуск через [detailed_flamegraph.sh](src/tests/detailed_flamegraph.sh))
-
-![flamegraph](src/tests/factorize_fast/single/flamegraph_detailed.svg)
-
-
-Множество экземпляров 10, количество итерации 50000
+Множество экземпляров 10, количество итерации 100000000
 
 Пример одного экземпляра (4го)
 
@@ -1252,58 +1199,53 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21403.8 avail Mem
 === Starting ../../cmake-build-release/factorize benchmark ===
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
- Performance counter stats for '../../cmake-build-release/factorize 50000':
+ Performance counter stats for '../../cmake-build-release/factorize 100000000':
 
-          3,311.43 msec task-clock                       #    0.399 CPUs utilized             
-            57,028      context-switches                 #   17.222 K/sec                     
-             9,058      cpu-migrations                   #    2.735 K/sec                     
-               136      page-faults                      #   41.070 /sec                      
-     2,040,265,613      cpu_atom/cycles/                 #    0.616 GHz                         (29.18%)
-     4,886,602,371      cpu_core/cycles/                 #    1.476 GHz                         (62.18%)
-     1,724,110,578      cpu_atom/instructions/           #    0.85  insn per cycle              (31.56%)
-     4,718,044,348      cpu_core/instructions/           #    2.31  insn per cycle              (65.55%)
-       340,018,168      cpu_atom/branches/               #  102.680 M/sec                       (27.45%)
-       996,407,598      cpu_core/branches/               #  300.900 M/sec                       (68.01%)
-         5,162,089      cpu_atom/branch-misses/          #    1.52% of all branches             (28.30%)
-         7,859,310      cpu_core/branch-misses/          #    2.31% of all branches             (70.99%)
-             TopdownL1 (cpu_core)                 #     20.6 %  tma_backend_bound      
-                                                  #      4.8 %  tma_bad_speculation    
-                                                  #     42.2 %  tma_frontend_bound     
-                                                  #     32.4 %  tma_retiring             (72.56%)
-             TopdownL1 (cpu_atom)                 #      6.1 %  tma_bad_speculation    
-                                                  #     24.2 %  tma_retiring             (27.31%)
-                                                  #     36.3 %  tma_backend_bound      
-                                                  #     36.3 %  tma_backend_bound_aux  
-                                                  #     33.3 %  tma_frontend_bound       (27.37%)
-     1,196,753,606      L1-dcache-loads                  #  361.401 M/sec                       (29.30%)
-     1,878,990,243      L1-dcache-loads                  #  567.426 M/sec                       (69.90%)
+            204.89 msec task-clock                       #    0.557 CPUs utilized             
+                53      context-switches                 #  258.681 /sec                      
+                 2      cpu-migrations                   #    9.762 /sec                      
+               127      page-faults                      #  619.858 /sec                      
+     <not counted>      cpu_atom/cycles/                                                        (0.00%)
+       825,263,563      cpu_core/cycles/                 #    4.028 GHz                         (34.32%)
+     <not counted>      cpu_atom/instructions/                                                  (0.00%)
+     2,226,315,990      cpu_core/instructions/                                                  (41.64%)
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+       409,449,561      cpu_core/branches/               #    1.998 G/sec                       (48.86%)
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+            35,303      cpu_core/branch-misses/                                                 (56.15%)
+             TopdownL1 (cpu_core)                 #      0.8 %  tma_backend_bound      
+                                                  #      1.6 %  tma_bad_speculation    
+                                                  #     24.3 %  tma_frontend_bound     
+                                                  #     73.4 %  tma_retiring             (63.30%)
+     <not counted>      L1-dcache-loads                                                         (0.00%)
+       499,683,957      L1-dcache-loads                  #    2.439 G/sec                       (71.04%)
    <not supported>      L1-dcache-load-misses                                                 
-        99,816,562      L1-dcache-load-misses            #    8.34% of all L1-dcache accesses   (68.80%)
-       369,509,485      LLC-loads                        #  111.586 M/sec                       (31.54%)
-        31,889,923      LLC-loads                        #    9.630 M/sec                       (70.91%)
-       924,359,395      LLC-load-misses                  #  250.16% of all LL-cache accesses    (30.62%)
-         1,361,915      LLC-load-misses                  #    0.37% of all LL-cache accesses    (71.36%)
-     1,545,988,868      L1-icache-loads                  #  466.865 M/sec                       (28.87%)
+            67,742      L1-dcache-load-misses                                                   (71.53%)
+     <not counted>      LLC-loads                                                               (0.00%)
+            14,099      LLC-loads                        #   68.814 K/sec                       (71.97%)
+     <not counted>      LLC-load-misses                                                         (0.00%)
+             2,228      LLC-load-misses                                                         (72.66%)
+     <not counted>      L1-icache-loads                                                         (0.00%)
    <not supported>      L1-icache-loads                                                       
-       560,330,398      L1-icache-load-misses            #   36.24% of all L1-icache accesses   (29.73%)
-       201,334,897      L1-icache-load-misses            #   13.02% of all L1-icache accesses   (33.71%)
-     1,165,412,501      dTLB-loads                       #  351.937 M/sec                       (28.90%)
-     1,204,734,153      dTLB-loads                       #  363.811 M/sec                       (54.38%)
-       540,831,218      dTLB-load-misses                 #   46.41% of all dTLB cache accesses  (26.12%)
-         1,579,289      dTLB-load-misses                 #    0.14% of all dTLB cache accesses  (49.47%)
+     <not counted>      L1-icache-load-misses                                                   (0.00%)
+           107,570      L1-icache-load-misses                                                   (28.96%)
+     <not counted>      dTLB-loads                                                              (0.00%)
+       502,896,384      dTLB-loads                       #    2.455 G/sec                       (28.47%)
+     <not counted>      dTLB-load-misses                                                        (0.00%)
+             1,498      dTLB-load-misses                                                        (28.03%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-       152,427,396      iTLB-load-misses                                                        (30.38%)
-         1,967,435      iTLB-load-misses                                                        (49.93%)
+     <not counted>      iTLB-load-misses                                                        (0.00%)
+               277      iTLB-load-misses                                                        (27.34%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       8.298140689 seconds time elapsed
+       0.367586160 seconds time elapsed
 
-       0.139627000 seconds user
-       2.949457000 seconds sys
+       0.203274000 seconds user
+       0.001992000 seconds sys
 ```
 
 - [ltrace](src/tests/factorize_fast/multiple/instance_4/ltrace.log)
@@ -1312,22 +1254,19 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 60.10   17.909581         358     50000 _ZNSt6thread4joinEv
- 30.26    9.016266         180     50000 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  9.65    2.874490          57     50000 _Znwm
-  0.00    0.000157          39         4 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000051          51         1 __isoc23_strtol
-  0.00    0.000044          44         1 _ZNSo5flushEv
-  0.00    0.000035          35         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000033          33         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
-  0.00    0.000030          30         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000030          30         1 _ZNSo3putEc
-  0.00    0.000029          29         1 strlen
-  0.00    0.000029          29         1 __errno_location
-  0.00    0.000029          29         1 _ZNSo9_M_insertIxEERSoT_
-  0.00    0.000027          27         1 memcpy
+ 33.95    0.000348          34        10 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 25.95    0.000266          33         8 _ZNSo9_M_insertIxEERSoT_
+ 12.59    0.000129          64         2 _ZNSo5flushEv
+  5.95    0.000061          30         2 _ZNSo3putEc
+  3.61    0.000037          37         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  3.12    0.000032          32         1 __isoc23_strtol
+  3.12    0.000032          32         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+  3.02    0.000031          31         1 _ZNKSt5ctypeIcE13_M_widen_initEv
+  2.93    0.000030          30         1 strlen
+  2.93    0.000030          30         1 __errno_location
+  2.83    0.000029          29         1 memcpy
 ------ ----------- ----------- --------- --------------------
-100.00   29.800831                150014 total
+100.00    0.001025                    29 total
 ```
 
 - [strace](src/tests/factorize_fast/multiple/instance_4/strace.log)
@@ -1336,96 +1275,48 @@ Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 70.96    0.763124          15     50000           clone3
- 27.30    0.293601           2    100001           rt_sigprocmask
-  1.73    0.018584           6      2758      1201 futex
-  0.01    0.000075           3        23           mmap
-  0.00    0.000047           6         7           mprotect
-  0.00    0.000010           3         3           brk
-  0.00    0.000009           9         1           munmap
-  0.00    0.000006           6         1           write
-  0.00    0.000006           1         5           close
-  0.00    0.000006           1         5           openat
-  0.00    0.000005           0         6           fstat
-  0.00    0.000003           0         4           read
-  0.00    0.000003           3         1           rt_sigaction
-  0.00    0.000003           3         1           set_tid_address
-  0.00    0.000003           3         1           getrandom
-  0.00    0.000002           2         1           arch_prctl
-  0.00    0.000002           2         1           set_robust_list
-  0.00    0.000002           2         1           prlimit64
-  0.00    0.000002           2         1           rseq
+  0.00    0.000000           0         4           read
+  0.00    0.000000           0         2           write
+  0.00    0.000000           0         5           close
+  0.00    0.000000           0         6           fstat
+  0.00    0.000000           0        22           mmap
+  0.00    0.000000           0         6           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           futex
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         5           openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+  0.00    0.000000           0         1           getrandom
+  0.00    0.000000           0         1           rseq
 ------ ----------- ----------- --------- --------- ----------------
-100.00    1.075493           7    152825      1202 total
+100.00    0.000000           0        65         1 total
 ```
 
 - [`top` во время исполнения всех экземпляров](src/tests/factorize_fast/multiple/top.log)
 ```
-top - 22:42:12 up  1:36,  1 user,  load average: 6.91, 5.24, 4.20
-Tasks: 482 total,  38 running, 436 sleeping,   8 stopped,   0 zombie
-%Cpu(s): 11.1 us, 84.8 sy,  0.0 ni,  3.8 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st 
-MiB Mem :  31715.9 total,  10997.3 free,  10393.0 used,  12078.3 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21323.0 avail Mem 
+top - 21:57:15 up  2:24,  1 user,  load average: 0.63, 1.16, 1.87
+Tasks: 510 total,  30 running, 480 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 90.5 us,  8.9 sy,  0.0 ni,  0.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12386.8 free,   9590.8 used,  11604.4 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22125.2 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
- 629113 root      20   0    5112   2744   2360 R  40.6   0.0   0:02.53 ltrace
- 629118 root      20   0    5112   3060   2548 R  40.6   0.0   0:02.40 ltrace
- 629135 root      20   0    5112   2872   2488 S  39.9   0.0   0:02.48 ltrace
- 629173 root      20   0    5112   2852   2468 R  39.3   0.0   0:02.50 ltrace
- 629101 root      20   0    5112   2744   2360 R  38.9   0.0   0:02.49 ltrace
- 629100 root      20   0    5112   2980   2596 R  38.6   0.0   0:02.50 ltrace
- 629105 root      20   0    5112   2868   2484 R  37.3   0.0   0:02.36 ltrace
- 629107 root      20   0    5112   2872   2488 R  37.0   0.0   0:02.26 ltrace
- 629126 root      20   0    5112   2852   2468 R  37.0   0.0   0:02.44 ltrace
- 629991 root      20   0   80100   3456   3456 S  37.0   0.0   0:02.35 factori+
- 629275 root      20   0   80100   3712   3584 R  36.6   0.0   0:02.30 factori+
- 629429 root      20   0   80100   3712   3584 R  36.6   0.0   0:02.31 factori+
- 629733 root      20   0   80100   3712   3584 R  36.6   0.0   0:02.35 factori+
- 629768 root      20   0   80100   3712   3584 R  36.6   0.0   0:02.32 factori+
- 630106 root      20   0   80100   3584   3456 R  36.6   0.0   0:02.31 factori+
- 629438 root      20   0   80100   3712   3584 R  36.3   0.0   0:02.33 factori+
- 629301 root      20   0   80100   3712   3584 S  36.0   0.0   0:02.29 factori+
- 629466 root      20   0   80100   3712   3584 R  36.0   0.0   0:02.33 factori+
- 629409 root      20   0   80100   3584   3456 S  35.6   0.0   0:02.31 factori+
- 629182 root      20   0    5112   2744   2360 R  35.3   0.0   0:02.43 ltrace
- 629120 root      20   0   19564   3456   2944 R  19.8   0.0   0:01.21 strace
- 629205 root      20   0   80100   3712   3584 R  19.8   0.0   0:01.20 factori+
- 629140 root      20   0   19564   3456   2944 R  19.5   0.0   0:01.22 strace
- 629163 root      20   0   19564   3584   3072 R  19.5   0.0   0:01.21 strace
- 629131 root      20   0   19564   3456   2944 R  19.1   0.0   0:01.18 strace
- 629200 root      20   0   80100   3712   3584 t  19.1   0.0   0:01.18 factori+
- 629109 root      20   0   19564   3456   2944 S  18.8   0.0   0:01.20 strace
- 629115 root      20   0   19564   3456   2944 R  18.8   0.0   0:01.18 strace
- 629122 root      20   0   19564   3456   2944 R  18.8   0.0   0:01.23 strace
- 629186 root      20   0   19564   3456   2944 R  18.8   0.0   0:01.17 strace
- 629203 root      20   0   80100   3712   3584 R  18.8   0.0   0:01.19 factori+
- 629166 root      20   0   80100   3712   3584 R  18.5   0.0   0:01.15 factori+
- 629176 root      20   0   19564   3584   3072 R  18.5   0.0   0:01.14 strace
- 629193 root      20   0   80100   3584   3456 R  18.5   0.0   0:01.16 factori+
- 629201 root      20   0   80100   3456   3456 R  18.5   0.0   0:01.19 factori+
- 629204 root      20   0   80100   3712   3584 R  18.5   0.0   0:01.14 factori+
- 629136 root      20   0   19564   3456   2944 S  18.2   0.0   0:01.16 strace
- 629240 root      20   0   80100   3712   3584 R  18.2   0.0   0:01.15 factori+
- 629191 root      20   0   80100   3712   3584 t  17.8   0.0   0:01.11 factori+
- 629209 root      20   0   80100   3584   3456 R  17.8   0.0   0:01.13 factori+
- 629157 root      20   0   80100   3584   3456 t  14.5   0.0   0:00.88 factori+
- 629165 root      20   0   80100   3584   3456 S  14.5   0.0   0:00.90 factori+
- 629148 root      20   0   80100   3584   3456 R  14.2   0.0   0:00.90 factori+
- 629168 root      20   0   80100   3584   3456 t  14.2   0.0   0:00.88 factori+
- 629145 root      20   0   80100   3456   3456 t  13.9   0.0   0:00.90 factori+
- 629144 root      20   0   80100   3712   3584 t  13.5   0.0   0:00.87 factori+
- 629197 root      20   0   80100   3584   3456 t  13.5   0.0   0:00.88 factori+
- 629154 root      20   0   80100   3584   3456 t  13.2   0.0   0:00.87 factori+
- 629151 root      20   0   80100   3584   3456 R  12.9   0.0   0:00.80 factori+
- 629211 root      20   0   80100   3584   3456 R  12.9   0.0   0:00.87 factori+
-     36 root      20   0       0      0      0 S   9.2   0.0   0:01.28 ksoftir+
-     96 root      20   0       0      0      0 R   8.9   0.0   0:01.20 ksoftir+
-     84 root      20   0       0      0      0 S   7.3   0.0   0:01.14 ksoftir+
-     24 root      20   0       0      0      0 S   6.9   0.0   0:01.17 ksoftir+
-  11497 glebmavi  20   0 9652640   3.1g 737960 S   5.3  10.0   9:54.38 clion
+  49536 root      20   0    6368   3328   3200 R  83.3   0.0   0:00.19 factori+
+  49545 root      20   0    6368   3328   3200 R  83.3   0.0   0:00.17 factori+
+  49505 root      20   0    6368   3328   3200 R  75.0   0.0   0:00.16 factori+
+  49514 root      20   0    6368   3200   3200 R  75.0   0.0   0:00.14 factori+
+  49553 root      20   0    6368   3328   3200 R  75.0   0.0   0:00.13 factori+
+  49502 root      20   0    6368   3328   3200 R  66.7   0.0   0:00.15 factori+
+  49546 root      20   0    6368   3328   3200 R  66.7   0.0   0:00.12 factori+
+  49548 root      20   0    6368   3328   3200 R  58.3   0.0   0:00.11 factori+
+  49555 root      20   0    6368   3328   3200 R  58.3   0.0   0:00.11 factori+
+  49503 root      20   0    6368   3328   3200 R  50.0   0.0   0:00.10 factori+
 ```
 
 
@@ -1787,7 +1678,7 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21339.0 avail Mem
 
 **Программа `combined` с агрессивной оптимизацией**
 
-Единичный экземпляр, количество итерации --factorize-iterations 20000 --io-iterations 500
+Единичный экземпляр, количество итерации --factorize-iterations 500000 --io-iterations 500
 
 - [perf](src/tests/combined_fast/single/perf.log)
 ```
@@ -1795,63 +1686,63 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21339.0 avail Mem
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.000431931 seconds
-Minimum write latency: 0.000393399 seconds
-Maximum write latency: 0.000788917 seconds
+Average write latency: 0.00042283 seconds
+Minimum write latency: 0.00039867 seconds
+Maximum write latency: 0.000777899 seconds
 Both benchmarks have completed successfully.
 
- Performance counter stats for '../../cmake-build-release/combined --factorize-iterations 20000 --io-iterations 500':
+ Performance counter stats for '../../cmake-build-release/combined --factorize-iterations 500000 --io-iterations 500':
 
-          1,039.90 msec task-clock                       #    1.260 CPUs utilized             
-            20,780      context-switches                 #   19.983 K/sec                     
-               443      cpu-migrations                   #  426.001 /sec                      
-               152      page-faults                      #  146.167 /sec                      
-         3,977,851      cpu_atom/cycles/                 #    0.004 GHz                         (52.11%)
-     3,188,703,905      cpu_core/cycles/                 #    3.066 GHz                         (36.99%)
-        14,129,743      cpu_atom/instructions/           #    3.55  insn per cycle              (98.90%)
-     5,445,885,114      cpu_core/instructions/           # 1369.05  insn per cycle              (46.20%)
-         4,689,341      cpu_atom/branches/               #    4.509 M/sec                       (99.38%)
-       976,060,988      cpu_core/branches/               #  938.607 M/sec                       (51.95%)
-           967,916      cpu_atom/branch-misses/          #   20.64% of all branches             (27.77%)
-         1,926,111      cpu_core/branch-misses/          #   41.07% of all branches             (57.82%)
-             TopdownL1 (cpu_core)                 #     38.0 %  tma_backend_bound      
-                                                  #      3.3 %  tma_bad_speculation    
-                                                  #     26.1 %  tma_frontend_bound     
-                                                  #     32.5 %  tma_retiring             (63.97%)
-             TopdownL1 (cpu_atom)                 #     15.3 %  tma_bad_speculation    
-                                                  #     14.2 %  tma_retiring             (29.40%)
-                                                  #     27.0 %  tma_backend_bound      
-                                                  #     27.0 %  tma_backend_bound_aux  
-                                                  #     43.6 %  tma_frontend_bound       (28.81%)
-       515,468,047      L1-dcache-loads                  #  495.688 M/sec                       (32.07%)
-     1,428,706,341      L1-dcache-loads                  #    1.374 G/sec                       (70.66%)
+            281.70 msec task-clock                       #    0.555 CPUs utilized             
+               517      context-switches                 #    1.835 K/sec                     
+                 6      cpu-migrations                   #   21.299 /sec                      
+               138      page-faults                      #  489.884 /sec                      
+       937,506,310      cpu_atom/cycles/                 #    3.328 GHz                         (0.08%)
+     1,221,010,674      cpu_core/cycles/                 #    4.334 GHz                         (38.78%)
+     1,792,571,227      cpu_atom/instructions/           #    1.91  insn per cycle              (0.43%)
+     2,403,314,557      cpu_core/instructions/           #    2.56  insn per cycle              (45.02%)
+       375,616,583      cpu_atom/branches/               #    1.333 G/sec                       (0.79%)
+       414,954,307      cpu_core/branches/               #    1.473 G/sec                       (51.34%)
+         2,678,413      cpu_atom/branch-misses/          #    0.71% of all branches             (1.05%)
+           990,865      cpu_core/branch-misses/          #    0.26% of all branches             (57.10%)
+             TopdownL1 (cpu_core)                 #     39.1 %  tma_backend_bound      
+                                                  #      2.8 %  tma_bad_speculation    
+                                                  #     24.5 %  tma_frontend_bound     
+                                                  #     33.6 %  tma_retiring             (64.69%)
+             TopdownL1 (cpu_atom)                 #      5.0 %  tma_bad_speculation    
+                                                  #     42.3 %  tma_retiring             (1.53%)
+                                                  #     27.2 %  tma_backend_bound      
+                                                  #     27.2 %  tma_backend_bound_aux  
+                                                  #     25.5 %  tma_frontend_bound       (1.70%)
+       415,809,744      L1-dcache-loads                  #    1.476 G/sec                       (1.82%)
+       610,610,299      L1-dcache-loads                  #    2.168 G/sec                       (64.83%)
    <not supported>      L1-dcache-load-misses                                                 
-        40,913,832      L1-dcache-load-misses            #    7.94% of all L1-dcache accesses   (70.09%)
-         7,396,047      LLC-loads                        #    7.112 M/sec                       (22.27%)
-         7,671,974      LLC-loads                        #    7.378 M/sec                       (69.57%)
-                41      LLC-load-misses                  #    0.00% of all LL-cache accesses    (35.99%)
-           271,756      LLC-load-misses                  #    3.67% of all LL-cache accesses    (69.36%)
-       159,245,903      L1-icache-loads                  #  153.135 M/sec                       (15.50%)
+         4,287,933      L1-dcache-load-misses            #    1.03% of all L1-dcache accesses   (64.99%)
+           535,951      LLC-loads                        #    1.903 M/sec                       (1.56%)
+         1,005,648      LLC-loads                        #    3.570 M/sec                       (63.89%)
+                 0      LLC-load-misses                                                         (1.07%)
+           129,867      LLC-load-misses                  #   24.23% of all LL-cache accesses    (65.94%)
+       277,898,236      L1-icache-loads                  #  986.506 M/sec                       (0.91%)
    <not supported>      L1-icache-loads                                                       
-        26,071,472      L1-icache-load-misses            #   16.37% of all L1-icache accesses   (12.83%)
-       103,619,705      L1-icache-load-misses            #   65.07% of all L1-icache accesses   (26.57%)
-       138,363,448      dTLB-loads                       #  133.054 M/sec                       (1.68%)
-     1,377,997,190      dTLB-loads                       #    1.325 G/sec                       (28.08%)
-             1,074      dTLB-load-misses                 #    0.00% of all dTLB cache accesses  (1.86%)
-           290,052      dTLB-load-misses                 #    0.21% of all dTLB cache accesses  (28.55%)
+         6,233,707      L1-icache-load-misses            #    2.24% of all L1-icache accesses   (0.10%)
+        56,125,137      L1-icache-load-misses            #   20.20% of all L1-icache accesses   (32.56%)
+     <not counted>      dTLB-loads                                                              (0.00%)
+       621,010,682      dTLB-loads                       #    2.205 G/sec                       (32.40%)
+     <not counted>      dTLB-load-misses                                                        (0.00%)
+            17,906      dTLB-load-misses                                                        (33.50%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
      <not counted>      iTLB-load-misses                                                        (0.00%)
-            48,063      iTLB-load-misses                                                        (28.52%)
+           494,139      iTLB-load-misses                                                        (31.45%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       0.825287921 seconds time elapsed
+       0.507900891 seconds time elapsed
 
-       0.049289000 seconds user
-       0.811676000 seconds sys
+       0.019149000 seconds user
+       0.266177000 seconds sys
 ```
 
 - [ltrace](src/tests/combined_fast/single/ltrace.log)
@@ -1860,28 +1751,40 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.127326 seconds
-Minimum write latency: 0.0679373 seconds
-Maximum write latency: 0.26397 seconds
+Average write latency: 0.0630666 seconds
+Minimum write latency: 0.054764 seconds
+Maximum write latency: 0.113674 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
-100.00   64.573189    32286594         2 _ZNSt6thread4joinEv
-  0.00    0.000437         218         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  0.00    0.000140          70         2 _ZNSo5flushEv
-  0.00    0.000129          43         3 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000090          45         2 _Znwm
-  0.00    0.000082          20         4 strlen
-  0.00    0.000081          20         4 memcpy
-  0.00    0.000043          21         2 __isoc23_strtol
-  0.00    0.000042          21         2 _ZNSo3putEc
-  0.00    0.000040          20         2 __errno_location
-  0.00    0.000025          25         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
-  0.00    0.000024          24         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000021          21         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000021          21         1 _ZdlPvm
+ 98.43   22.179040          21   1024000 _ZNSo5writeEPKcl
+  0.58    0.130239         260       500 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.43    0.096415          96      1000 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.11    0.025486          25      1000 _ZNSt6chrono3_V212system_clock3nowEv
+  0.10    0.021857          21      1000 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.05    0.011754          23       500 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.05    0.011073          22       500 _ZNSt12__basic_fileIcED1Ev
+  0.05    0.011020          21       503 _ZNSo5flushEv
+  0.05    0.010942          21       500 _ZNSt8ios_baseD2Ev
+  0.05    0.010928          21       500 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.05    0.010927          21       500 _ZNSt6localeD1Ev
+  0.05    0.010722          21       500 _ZNSt8ios_baseC2Ev
+  0.00    0.000812          45        18 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000449          37        12 _ZdlPvm
+  0.00    0.000315          39         8 _ZNSo9_M_insertIxEERSoT_
+  0.00    0.000293          26        11 _Znwm
+  0.00    0.000216          24         9 memmove
+  0.00    0.000158          39         4 strlen
+  0.00    0.000153          38         4 memcpy
+  0.00    0.000099          33         3 _ZNSo3putEc
+  0.00    0.000085          28         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000080          40         2 __isoc23_strtol
+  0.00    0.000078          39         2 __errno_location
+  0.00    0.000059          59         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000046          46         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000041          41         1 _ZNKSt5ctypeIcE13_M_widen_initEv
 ------ ----------- ----------- --------- --------------------
-100.00   64.574364                    29 total
+100.00   22.533287               1031082 total
 ```
 
 - [strace](src/tests/combined_fast/single/strace.log)
@@ -1890,65 +1793,53 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.000433555 seconds
-Minimum write latency: 0.000389365 seconds
-Maximum write latency: 0.000762876 seconds
+Average write latency: 0.0015976 seconds
+Minimum write latency: 0.00130988 seconds
+Maximum write latency: 0.00291788 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 99.87    0.402232      134077         3           futex
-  0.04    0.000162           6        24           mmap
-  0.04    0.000149         149         1           execve
-  0.01    0.000043           5         8           mprotect
-  0.01    0.000032          16         2           clone3
-  0.01    0.000028           5         5           openat
-  0.00    0.000018           3         6           fstat
-  0.00    0.000013           3         4           read
-  0.00    0.000013           2         5           rt_sigprocmask
-  0.00    0.000012           6         2           write
-  0.00    0.000010           2         5           close
-  0.00    0.000010          10         1           munmap
-  0.00    0.000009           3         3           brk
-  0.00    0.000004           2         2           pread64
-  0.00    0.000004           4         1         1 access
+ 65.56    0.242867           3     64000           writev
+ 17.98    0.066589         131       505           openat
+ 16.34    0.060539         119       505           close
+  0.04    0.000161           7        22           mmap
+  0.04    0.000155         155         1           execve
+  0.01    0.000033           5         6           mprotect
+  0.01    0.000019           3         6           fstat
+  0.00    0.000013           4         3           write
+  0.00    0.000013          13         1           munmap
+  0.00    0.000012           3         4           read
+  0.00    0.000011           3         3           brk
+  0.00    0.000005           2         2           pread64
+  0.00    0.000003           3         1         1 access
+  0.00    0.000003           3         1           arch_prctl
+  0.00    0.000003           3         1           futex
   0.00    0.000003           3         1           prlimit64
   0.00    0.000003           3         1           getrandom
-  0.00    0.000002           2         1           rt_sigaction
-  0.00    0.000002           2         1           arch_prctl
   0.00    0.000002           2         1           set_tid_address
   0.00    0.000002           2         1           set_robust_list
   0.00    0.000002           2         1           rseq
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.402755        5098        79         1 total
+100.00    0.370438           5     65066         1 total
 ```
 
 - [top](src/tests/combined_fast/single/top.log)
 ```
-top - 22:41:43 up  1:36,  1 user,  load average: 1.45, 4.36, 3.91
-Tasks: 383 total,   2 running, 381 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  1.8 us, 12.0 sy,  0.0 ni, 83.7 id,  2.4 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :  31715.9 total,  11065.8 free,  10325.3 used,  12077.2 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21390.6 avail Mem 
+top - 21:38:22 up  2:05,  1 user,  load average: 1.25, 1.10, 1.57
+Tasks: 419 total,   1 running, 418 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.4 us,  5.4 sy,  0.0 ni, 89.8 id,  2.4 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12555.7 free,   9436.1 used,  11618.4 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22279.9 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
- 589032 root      20   0  227564   3584   3456 S 120.0   0.0   0:00.24 combined
-     60 root      20   0       0      0      0 S  10.0   0.0   0:00.53 ksoftir+
-     66 root      20   0       0      0      0 S  10.0   0.0   0:00.66 ksoftir+
-    162 root      20   0       0      0      0 I  10.0   0.0   0:01.15 kworker+
-  14728 root      20   0       0      0      0 R  10.0   0.0   0:04.50 kworker+
-      1 root      20   0   23684  14176   9440 S   0.0   0.0   0:02.95 systemd
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+  44927 root      20   0    6368   3456   3328 D  60.0   0.0   0:00.12 combined
 ```
 
 - flamegraph
 
 ![flamegraph](src/tests/combined_fast/single/flamegraph.svg)
 
-Более подробный flamegraph, с увеличенным record frequency (запуск через [detailed_flamegraph.sh](src/tests/detailed_flamegraph.sh))
-
-![flamegraph](src/tests/combined_fast/single/flamegraph_detailed.svg)
-
-Множество экземпляров 10, количество итерации --factorize-iterations 10000 --io-iterations 100
+Множество экземпляров 10, количество итерации --factorize-iterations 500000 --io-iterations 100
 
 Пример одного экземпляра (4го)
 
@@ -1958,63 +1849,63 @@ MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21390.6 avail Mem
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.0143645 seconds
-Minimum write latency: 0.000614043 seconds
-Maximum write latency: 0.0582612 seconds
+Average write latency: 0.00630362 seconds
+Minimum write latency: 0.000477838 seconds
+Maximum write latency: 0.0249006 seconds
 Both benchmarks have completed successfully.
 
- Performance counter stats for '../../cmake-build-release/combined --factorize-iterations 10000 --io-iterations 100':
+ Performance counter stats for '../../cmake-build-release/combined --factorize-iterations 500000 --io-iterations 100':
 
-            867.44 msec task-clock                       #    0.452 CPUs utilized             
-            13,249      context-switches                 #   15.274 K/sec                     
-             4,036      cpu-migrations                   #    4.653 K/sec                     
-               149      page-faults                      #  171.769 /sec                      
-       822,633,041      cpu_atom/cycles/                 #    0.948 GHz                         (25.87%)
-     1,094,034,821      cpu_core/cycles/                 #    1.261 GHz                         (56.56%)
-       669,408,049      cpu_atom/instructions/           #    0.81  insn per cycle              (29.11%)
-     1,060,636,878      cpu_core/instructions/           #    1.29  insn per cycle              (59.34%)
-       142,129,937      cpu_atom/branches/               #  163.849 M/sec                       (27.19%)
-       224,669,169      cpu_core/branches/               #  259.001 M/sec                       (62.95%)
-         2,234,014      cpu_atom/branch-misses/          #    1.57% of all branches             (26.02%)
-         1,999,714      cpu_core/branch-misses/          #    1.41% of all branches             (65.54%)
-             TopdownL1 (cpu_core)                 #     26.4 %  tma_backend_bound      
-                                                  #      4.8 %  tma_bad_speculation    
-                                                  #     38.6 %  tma_frontend_bound     
-                                                  #     30.2 %  tma_retiring             (66.59%)
-             TopdownL1 (cpu_atom)                 #      8.4 %  tma_bad_speculation    
-                                                  #     21.9 %  tma_retiring             (25.04%)
-                                                  #     36.9 %  tma_backend_bound      
-                                                  #     36.9 %  tma_backend_bound_aux  
-                                                  #     32.8 %  tma_frontend_bound       (26.94%)
-       286,547,950      L1-dcache-loads                  #  330.336 M/sec                       (25.01%)
-       447,560,393      L1-dcache-loads                  #  515.953 M/sec                       (64.81%)
+            123.12 msec task-clock                       #    0.157 CPUs utilized             
+             1,927      context-switches                 #   15.652 K/sec                     
+               392      cpu-migrations                   #    3.184 K/sec                     
+               140      page-faults                      #    1.137 K/sec                     
+       384,386,036      cpu_atom/cycles/                 #    3.122 GHz                         (7.00%)
+       456,503,749      cpu_core/cycles/                 #    3.708 GHz                         (27.75%)
+       350,218,743      cpu_atom/instructions/           #    0.91  insn per cycle              (8.53%)
+       454,087,421      cpu_core/instructions/           #    1.18  insn per cycle              (33.50%)
+        64,019,958      cpu_atom/branches/               #  519.995 M/sec                       (10.81%)
+        81,308,287      cpu_core/branches/               #  660.417 M/sec                       (39.34%)
+           733,743      cpu_atom/branch-misses/          #    1.15% of all branches             (10.49%)
+           565,672      cpu_core/branch-misses/          #    0.88% of all branches             (43.85%)
+             TopdownL1 (cpu_core)                 #     46.6 %  tma_backend_bound      
+                                                  #      3.8 %  tma_bad_speculation    
+                                                  #     23.5 %  tma_frontend_bound     
+                                                  #     26.1 %  tma_retiring             (51.19%)
+             TopdownL1 (cpu_atom)                 #      8.2 %  tma_bad_speculation    
+                                                  #     23.7 %  tma_retiring             (10.58%)
+                                                  #     39.3 %  tma_backend_bound      
+                                                  #     39.3 %  tma_backend_bound_aux  
+                                                  #     28.8 %  tma_frontend_bound       (10.50%)
+       370,932,399      L1-dcache-loads                  #    3.013 G/sec                       (6.01%)
+       110,034,172      L1-dcache-loads                  #  893.740 M/sec                       (56.05%)
    <not supported>      L1-dcache-load-misses                                                 
-        24,269,262      L1-dcache-load-misses            #    8.47% of all L1-dcache accesses   (63.58%)
-        42,950,335      LLC-loads                        #   49.514 M/sec                       (28.66%)
-         7,487,284      LLC-loads                        #    8.631 M/sec                       (63.73%)
-        81,789,346      LLC-load-misses                  #  190.43% of all LL-cache accesses    (27.17%)
-           219,279      LLC-load-misses                  #    0.51% of all LL-cache accesses    (64.43%)
-       262,510,772      L1-icache-loads                  #  302.626 M/sec                       (22.01%)
+         2,892,506      L1-dcache-load-misses            #    0.78% of all L1-dcache accesses   (55.21%)
+       269,447,092      LLC-loads                        #    2.189 G/sec                       (5.72%)
+           718,628      LLC-loads                        #    5.837 M/sec                       (59.15%)
+        46,860,968      LLC-load-misses                  #   17.39% of all LL-cache accesses    (7.44%)
+            19,651      LLC-load-misses                  #    0.01% of all LL-cache accesses    (59.20%)
+       174,560,082      L1-icache-loads                  #    1.418 G/sec                       (6.59%)
    <not supported>      L1-icache-loads                                                       
-       274,227,838      L1-icache-load-misses            #  104.46% of all L1-icache accesses   (23.05%)
-        51,131,815      L1-icache-load-misses            #   19.48% of all L1-icache accesses   (29.24%)
-       335,374,895      dTLB-loads                       #  386.624 M/sec                       (25.88%)
-       282,515,161      dTLB-loads                       #  325.687 M/sec                       (44.68%)
-       139,134,860      dTLB-load-misses                 #   41.49% of all dTLB cache accesses  (28.14%)
-           523,964      dTLB-load-misses                 #    0.16% of all dTLB cache accesses  (45.83%)
+         5,366,109      L1-icache-load-misses            #    3.07% of all L1-icache accesses   (6.72%)
+        14,560,663      L1-icache-load-misses            #    8.34% of all L1-icache accesses   (23.27%)
+        99,702,887      dTLB-loads                       #  809.825 M/sec                       (6.91%)
+       110,996,693      dTLB-loads                       #  901.558 M/sec                       (24.11%)
+       301,742,672      dTLB-load-misses                 #  302.64% of all dTLB cache accesses  (7.44%)
+            50,208      dTLB-load-misses                 #    0.05% of all dTLB cache accesses  (20.18%)
    <not supported>      iTLB-loads                                                            
    <not supported>      iTLB-loads                                                            
-        45,408,202      iTLB-load-misses                                                        (26.61%)
-           276,602      iTLB-load-misses                                                        (44.73%)
+       167,169,396      iTLB-load-misses                                                        (7.76%)
+           108,770      iTLB-load-misses                                                        (20.12%)
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetches                                                  
    <not supported>      L1-dcache-prefetch-misses                                             
    <not supported>      L1-dcache-prefetch-misses                                             
 
-       1.919030045 seconds time elapsed
+       0.783002355 seconds time elapsed
 
-       0.048684000 seconds user
-       0.756822000 seconds sys
+       0.012976000 seconds user
+       0.111379000 seconds sys
 ```
 
 - [ltrace](src/tests/combined_fast/multiple/instance_4/ltrace.log)
@@ -2023,28 +1914,40 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.286773 seconds
-Minimum write latency: 0.134362 seconds
-Maximum write latency: 1.50317 seconds
+Average write latency: 0.130692 seconds
+Minimum write latency: 0.112011 seconds
+Maximum write latency: 0.244762 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls      function
 ------ ----------- ----------- --------- --------------------
- 99.99   28.845289    14422644         2 _ZNSt6thread4joinEv
-  0.01    0.002472        1236         2 _ZNSo5flushEv
-  0.00    0.000431         215         2 _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
-  0.00    0.000179          59         3 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  0.00    0.000152          38         4 strlen
-  0.00    0.000136          34         4 memcpy
-  0.00    0.000077          38         2 _Znwm
-  0.00    0.000073          36         2 __isoc23_strtol
-  0.00    0.000066          33         2 __errno_location
-  0.00    0.000064          64         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
-  0.00    0.000062          31         2 _ZNSo3putEc
-  0.00    0.000057          57         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  0.00    0.000040          40         1 _ZNKSt5ctypeIcE13_M_widen_initEv
-  0.00    0.000040          40         1 _ZdlPvm
+ 99.07    9.163418          44    204800 _ZNSo5writeEPKcl
+  0.21    0.019786         197       100 _ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode
+  0.19    0.017806          89       200 _ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv
+  0.09    0.008340          41       200 _ZNSt6chrono3_V212system_clock3nowEv
+  0.09    0.008316          41       200 _ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E
+  0.05    0.004289          41       103 _ZNSo5flushEv
+  0.05    0.004200          42       100 _ZNSt8ios_baseD2Ev
+  0.05    0.004191          41       100 _ZNSt8ios_baseC2Ev
+  0.04    0.004136          41       100 _ZNSt6localeD1Ev
+  0.04    0.004128          41       100 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
+  0.04    0.004091          40       100 _ZNSt12__basic_fileIcED1Ev
+  0.04    0.003971          39       100 _ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev
+  0.01    0.000686          38        18 _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  0.00    0.000380          38        10 _ZdlPvm
+  0.00    0.000376          41         9 _Znwm
+  0.00    0.000352          44         8 _ZNSo9_M_insertIxEERSoT_
+  0.00    0.000280          40         7 memmove
+  0.00    0.000180          45         4 strlen
+  0.00    0.000173          43         4 memcpy
+  0.00    0.000120          40         3 _ZNSo3putEc
+  0.00    0.000091          45         2 __isoc23_strtol
+  0.00    0.000088          29         3 _ZNSo9_M_insertIdEERSoT_
+  0.00    0.000086          43         2 __errno_location
+  0.00    0.000054          54         1 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  0.00    0.000051          51         1 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
+  0.00    0.000048          48         1 _ZNKSt5ctypeIcE13_M_widen_initEv
 ------ ----------- ----------- --------- --------------------
-100.00   28.849138                    29 total
+100.00    9.249637                206276 total
 ```
 
 - [strace](src/tests/combined_fast/multiple/instance_4/strace.log)
@@ -2053,66 +1956,64 @@ Both benchmarks have completed successfully.
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.0171202 seconds
-Minimum write latency: 0.000636347 seconds
-Maximum write latency: 0.0837915 seconds
+Average write latency: 0.0131688 seconds
+Minimum write latency: 0.00390776 seconds
+Maximum write latency: 0.0657533 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
- 99.97    0.309433      103144         3           futex
-  0.01    0.000034          17         2           clone3
-  0.01    0.000019           9         2           write
-  0.01    0.000018           3         5           rt_sigprocmask
-  0.00    0.000010           0        24           mmap
-  0.00    0.000009           1         8           mprotect
-  0.00    0.000002           2         1           rt_sigaction
+ 86.47    0.138794          10     12800           writev
+  7.05    0.011309         107       105           close
+  6.48    0.010393          98       105           openat
+  0.00    0.000007           2         3           write
   0.00    0.000000           0         4           read
-  0.00    0.000000           0         5           close
   0.00    0.000000           0         6           fstat
+  0.00    0.000000           0        22           mmap
+  0.00    0.000000           0         6           mprotect
   0.00    0.000000           0         1           munmap
   0.00    0.000000           0         3           brk
   0.00    0.000000           0         2           pread64
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
   0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           futex
   0.00    0.000000           0         1           set_tid_address
-  0.00    0.000000           0         5           openat
   0.00    0.000000           0         1           set_robust_list
   0.00    0.000000           0         1           prlimit64
   0.00    0.000000           0         1           getrandom
   0.00    0.000000           0         1           rseq
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.309525        3918        79         1 total
+100.00    0.160503          12     13066         1 total
 ```
 
 - [`top` во время исполнения всех экземпляров](src/tests/combined_fast/multiple/top.log)
 ```
-top - 22:43:56 up  1:38,  1 user,  load average: 10.75, 7.24, 5.04
-Tasks: 428 total,  13 running, 406 sleeping,   9 stopped,   0 zombie
-%Cpu(s): 12.8 us, 62.2 sy,  0.0 ni, 25.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :  31715.9 total,  11070.0 free,  10318.4 used,  12142.8 buff/cache     
-MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  21397.5 avail Mem 
+top - 21:42:54 up  2:10,  1 user,  load average: 6.64, 5.17, 3.18
+Tasks: 462 total,  11 running, 442 sleeping,   9 stopped,   0 zombie
+%Cpu(s): 17.4 us, 45.7 sy,  0.0 ni, 36.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31716.0 total,  12713.8 free,   9276.3 used,  11567.2 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  22439.7 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-2129579 root      20   0    5112   2744   2488 R  89.0   0.0   0:04.41 ltrace
-2129556 root      20   0    5112   2980   2596 R  88.4   0.0   0:04.43 ltrace
-2129608 root      20   0    5112   2872   2488 R  88.0   0.0   0:04.42 ltrace
-2129555 root      20   0    5112   2872   2488 R  87.7   0.0   0:04.38 ltrace
-2129561 root      20   0    5112   3032   2520 S  87.7   0.0   0:04.39 ltrace
-2129562 root      20   0    5112   3060   2548 R  87.7   0.0   0:04.41 ltrace
-2129614 root      20   0    5112   2724   2340 R  87.7   0.0   0:04.41 ltrace
-2129597 root      20   0    5112   2852   2468 R  87.4   0.0   0:04.33 ltrace
-2129606 root      20   0    5112   2744   2360 R  87.0   0.0   0:04.39 ltrace
-2129575 root      20   0    5112   2872   2488 R  86.7   0.0   0:04.37 ltrace
-2129592 root      20   0  227564   3584   3456 t  23.3   0.0   0:01.18 combined
-2129615 root      20   0  227564   3712   3584 t  23.3   0.0   0:01.20 combined
-2129650 root      20   0  227564   3584   3456 t  23.3   0.0   0:01.19 combined
-2129602 root      20   0  227564   3712   3584 t  22.9   0.0   0:01.18 combined
-2129625 root      20   0  227564   3584   3456 S  22.9   0.0   0:01.18 combined
-2129633 root      20   0  227564   3712   3584 t  22.9   0.0   0:01.17 combined
-2129646 root      20   0  227564   3712   3584 t  22.9   0.0   0:01.17 combined
-2129648 root      20   0  227564   3584   3456 t  22.9   0.0   0:01.16 combined
-2129626 root      20   0  227564   3456   3328 t  22.6   0.0   0:01.17 combined
-2129637 root      20   0  227564   3584   3456 t  22.6   0.0   0:01.19 combined
-  11497 glebmavi  20   0 9659984   3.1g 738216 S  17.3  10.1  10:02.19 clion
+  46268 root      20   0    5112   3056   2544 R  73.1   0.0   0:04.15 ltrace
+  46279 root      20   0    5112   2724   2340 R  73.1   0.0   0:04.15 ltrace
+  46284 root      20   0    5112   3060   2548 S  73.1   0.0   0:04.14 ltrace
+  46303 root      20   0    5112   2980   2596 R  72.8   0.0   0:04.14 ltrace
+  46305 root      20   0    5112   2872   2488 R  72.8   0.0   0:04.13 ltrace
+  46308 root      20   0    5112   2872   2488 R  72.8   0.0   0:04.13 ltrace
+  46328 root      20   0    5112   2976   2464 R  72.8   0.0   0:04.12 ltrace
+  46275 root      20   0    5112   2808   2424 R  72.4   0.0   0:04.13 ltrace
+  46285 root      20   0    5112   2996   2484 R  72.4   0.0   0:04.13 ltrace
+  46306 root      20   0    5112   3044   2532 R  72.4   0.0   0:04.14 ltrace
+  46339 root      20   0    6368   3456   3328 t  21.9   0.0   0:01.24 combined
+  46342 root      20   0    6368   3328   3200 t  21.9   0.0   0:01.23 combined
+  46337 root      20   0    6368   3328   3200 t  21.6   0.0   0:01.22 combined
+  46341 root      20   0    6368   3456   3328 t  21.6   0.0   0:01.23 combined
+  46370 root      20   0    6368   3328   3200 t  21.6   0.0   0:01.24 combined
+  46379 root      20   0    6368   3072   3072 R  21.6   0.0   0:01.23 combined
+  46320 root      20   0    6368   3456   3328 t  21.3   0.0   0:01.22 combined
+  46332 root      20   0    6368   3328   3200 t  21.3   0.0   0:01.22 combined
+  46347 root      20   0    6368   3328   3200 t  21.3   0.0   0:01.23 combined
+  46363 root      20   0    6368   3328   3200 t  21.3   0.0   0:01.22 combined
+  40294 glebmavi  20   0 9538716   3.0g 711940 S   4.7   9.6   8:17.02 clion
 ```

@@ -1,7 +1,6 @@
 #include "FactorizeBenchmark.h"
 #include "IOLatencyWriteBenchmark.h"
 #include <iostream>
-#include <thread>
 #include <string>
 
 void print_usage(const char* program_name) {
@@ -62,17 +61,8 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Run benchmarks in separate threads
-    std::thread factorize_thread([&]() {
-        FactorizeBenchmark::run(factorize_iterations, number, verbose);
-    });
-
-    std::thread io_thread([&]() {
-        IOLatencyWriteBenchmark::run(io_iterations, verbose);
-    });
-
-    factorize_thread.join();
-    io_thread.join();
+    FactorizeBenchmark::run(factorize_iterations, number, verbose);
+    IOLatencyWriteBenchmark::run(io_iterations, verbose);
 
     std::cout << "Both benchmarks have completed successfully." << std::endl;
 

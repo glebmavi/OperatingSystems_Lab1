@@ -2,33 +2,31 @@
 Factorizing 1234567890123456789: 3 3 101 3541 3607 3803 27961
 
 Overall Statistics:
-Average write latency: 0.0165191 seconds
-Minimum write latency: 0.000757794 seconds
-Maximum write latency: 0.115173 seconds
+Average write latency: 0.0174237 seconds
+Minimum write latency: 0.00277432 seconds
+Maximum write latency: 0.0805478 seconds
 Both benchmarks have completed successfully.
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.286668       95556         3           futex
-  0.00    0.000004           2         2           write
-  0.00    0.000000           0         4           read
-  0.00    0.000000           0         5           close
-  0.00    0.000000           0         6           fstat
-  0.00    0.000000           0        24           mmap
-  0.00    0.000000           0         8           mprotect
-  0.00    0.000000           0         1           munmap
-  0.00    0.000000           0         3           brk
-  0.00    0.000000           0         1           rt_sigaction
-  0.00    0.000000           0         5           rt_sigprocmask
-  0.00    0.000000           0         2           pread64
+ 82.11    0.108907           8     12800           writev
+  8.92    0.011833         112       105           openat
+  8.82    0.011693         111       105           close
+  0.07    0.000088           4        22           mmap
+  0.03    0.000040           6         6           mprotect
+  0.01    0.000017           5         3           write
+  0.01    0.000011           1         6           fstat
+  0.01    0.000007           7         1           munmap
+  0.01    0.000007           2         3           brk
+  0.00    0.000006           1         4           read
+  0.00    0.000004           2         2           pread64
+  0.00    0.000003           3         1           futex
+  0.00    0.000003           3         1           prlimit64
+  0.00    0.000002           2         1           arch_prctl
+  0.00    0.000002           2         1           set_tid_address
+  0.00    0.000002           2         1           set_robust_list
+  0.00    0.000002           2         1           getrandom
+  0.00    0.000002           2         1           rseq
   0.00    0.000000           0         1         1 access
   0.00    0.000000           0         1           execve
-  0.00    0.000000           0         1           arch_prctl
-  0.00    0.000000           0         1           set_tid_address
-  0.00    0.000000           0         5           openat
-  0.00    0.000000           0         1           set_robust_list
-  0.00    0.000000           0         1           prlimit64
-  0.00    0.000000           0         1           getrandom
-  0.00    0.000000           0         1           rseq
-  0.00    0.000000           0         2           clone3
 ------ ----------- ----------- --------- --------- ----------------
-100.00    0.286672        3628        79         1 total
+100.00    0.132629          10     13066         1 total
