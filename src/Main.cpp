@@ -19,30 +19,60 @@ void execute_task(Shell& shell, const std::string& command) {
 
     shell.add_to_history(command);
 
-    // Setup clone3 arguments
-    struct clone_args cl_args = {0};
-    cl_args.flags = CLONE_FS | CLONE_FILES, // Необходимо для работы с файлами
-    cl_args.exit_signal = SIGCHLD;
+    // Количество instances
+    int instances = 1;
+    std::string modified_command = command;
+    size_t pos = command.find("--instances");
+    if (pos != std::string::npos) {
+        // Берем количество instances из команды
+        size_t start_pos = pos + std::string("--instances").length();
+        while (start_pos < command.length() && isspace(command[start_pos])) {
+            ++start_pos;
+        }
+        size_t end_pos = start_pos;
+        while (end_pos < command.length() && isdigit(command[end_pos])) { // перемещение end_pos до конца числа
+            ++end_pos;
+        }
+        std::string instances_str = command.substr(start_pos, end_pos - start_pos);
+        instances = std::stoi(instances_str);
 
-    // Создание процесса
-    int pid = clone3(&cl_args, sizeof(cl_args));
-    if (pid == 0) {
-        // Процесс-потомок: Выполнение команды
-        std::vector<char*> args;
-        shell.execute_command(command);
-        exit(0);
-    } else if (pid > 0) {
-        // Процесс-родитель: Ожидание завершения процесса-потомка
+        // Убираем --instances n из команды
+        modified_command = command.substr(0, pos);
+        modified_command.erase(modified_command.find_last_not_of(" \t\n\r\f\v") + 1);
+    }
+
+    std::vector<pid_t> child_pids;
+
+    for (int i = 0; i < instances; ++i) {
+        // Setup clone3 arguments
+        struct clone_args cl_args = {0};
+        cl_args.flags = CLONE_FS | CLONE_FILES, // Необходимо для работы с файлами
+        cl_args.exit_signal = SIGCHLD;
+
+        // Создание процесса
+        pid_t pid = clone3(&cl_args, sizeof(cl_args));
+        if (pid == 0) {
+            // Процесс-потомок: Выполнение команды
+            shell.execute_command(modified_command);
+            exit(0);
+        } else if (pid > 0) {
+            // Процесс-родитель: Сохраняем PID потомка
+            child_pids.push_back(pid);
+        } else {
+            std::cerr << "clone3 failed!" << std::endl;
+        }
+    }
+
+    // Ожидание завершения всех потомков
+    for (pid_t pid : child_pids) {
         int status;
         waitpid(pid, &status, 0);
-
-        // Измерение времени выполнения
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> elapsed_time = end - start;
-        std::cout << "Execution time: " << elapsed_time.count() << " seconds" << std::endl;
-    } else {
-        std::cerr << "clone3 failed!" << std::endl;
     }
+
+    // Измерение времени выполнения
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_time = end - start;
+    std::cout << "Execution time: " << elapsed_time.count() << " seconds" << std::endl;
 }
 
 int main() {
